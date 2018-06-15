@@ -25,7 +25,7 @@
 <meta name="author" content="rOpenSci onboarding editorial team: Scott Chamberlain, Anna Krystalli, Lincoln Mullen, Karthik Ram, Noam Ross, Maëlle Salmon">
 
 
-<meta name="date" content="2018-06-14">
+<meta name="date" content="2018-06-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -181,14 +181,14 @@
 <p>GitHub <a href="https://help.github.com/articles/classifying-your-repository-with-topics/">repo topics</a> help browsing and searching GitHub repos, and are digested by <a href="https://github.com/ropensci/codemetar"><code>codemetar</code></a> for rOpenSci registry keywords.</p>
 <p>We recommend:</p>
 <ul>
-<li><p>Adding “r” and “rstats” as topics to your package repo.</p></li>
+<li><p>Adding “r”, “r-package” and “rstats” as topics to your package repo.</p></li>
 <li><p>Adding any other relevant topics to your package repo.</p></li>
 </ul>
 <p>We might make suggestions to you after your package is onboarded.</p>
 </div>
 <div id="github-linguist" class="section level3">
 <h3><span class="header-section-number">12.1.2</span> GitHub linguist</h3>
-<p><a href="https://github.com/github/linguist">GitHub linguist</a> will assign a language for your repo based on the files it contains. Some packages containing a lot of C++ code might get classified as C++ rather than R packages, which is fine and shows the need for the “r” and “rstats” topics.</p>
+<p><a href="https://github.com/github/linguist">GitHub linguist</a> will assign a language for your repo based on the files it contains. Some packages containing a lot of C++ code might get classified as C++ rather than R packages, which is fine and shows the need for the “r”, “r-package” and “rstats” topics.</p>
 <p>We recommend overriding GitHub linguist by adding or modifying a .gitattributes to your repo in two cases:</p>
 <ul>
 <li><p>If you store html files in non standard places (not in docs/, e.g. in vignettes/) use the documentation overrides. Add <code>*.html linguist-documentation=true</code> to .gitattributes (<a href="https://github.com/ropensci/ecoengine/blob/56b64d8d29dfae430a776d1dd440b240452eb1bf/.gitattributes#L5">Example in the wild</a>)</p></li>
