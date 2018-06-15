@@ -348,7 +348,7 @@ information about GooberDB, and documentation of database structure and metadata
 <div id="package-dependencies" class="section level2">
 <h2><span class="header-section-number">1.8</span> Package dependencies</h2>
 <ul>
-<li><p>Use <code>Imports</code> instead of <code>Depends</code> for packages providing functions from other packages. Make sure to list packages used for testing (<code>testthat</code>), and documentation (<code>knitr</code>, <code>roxygen2</code>) in your <code>Suggests</code> section of package dependencies. If you use any packages in your examples sections, make sure to list those, if not already listed elsewhere, in <code>Enhances</code> section of package dependencies.</p></li>
+<li><p>Use <code>Imports</code> instead of <code>Depends</code> for packages providing functions from other packages. Make sure to list packages used for testing (<code>testthat</code>), and documentation (<code>knitr</code>, <code>roxygen2</code>) in your <code>Suggests</code> section of package dependencies. If you use any packages in your examples sections, make sure to list those, if not already listed elsewhere, in <code>Suggests</code> section of package dependencies.</p></li>
 <li><p>For most cases where you must expose functions from dependencies to the user, you should import and re-export those individual functions rather than listing them in the <code>Depends</code> fields. For instance, if functions in your package produce <code>raster</code> objects, you might re-export only printing and plotting functions from the <strong>raster</strong> package.</p></li>
 </ul>
 </div>
