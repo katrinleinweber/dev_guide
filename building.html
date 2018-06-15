@@ -319,6 +319,7 @@ information about GooberDB, and documentation of database structure and metadata
 <li><p>More information on using roxygen2 <a href="http://r-pkgs.had.co.nz/man.html">documentation</a> is available in the R packages book.</p></li>
 <li><p>One key advantage of using <code>roxygen2</code> is that your <code>NAMESPACE</code> will always be automatically generated and up to date.</p></li>
 <li><p>When using <code>roxygen2</code>, add <code>#' @noRd</code> to internal functions.</p></li>
+<li><p>Only use package startup messages when necessary (function masking for instance). Avoid package startup messages like “This is foobar 2.4-0” or citation guidance because they can be annoying to the user. Rely on documentation for such guidance.</p></li>
 </ul>
 </div>
 <div id="authorship" class="section level2">
