@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="collaboration-guide.html">
-<link rel="next" href="marketing.html">
+<link rel="prev" href="evolution.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -244,46 +244,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="releasing" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Releasing a package</h1>
-<div id="news-file" class="section level2">
-<h2><span class="header-section-number">10.1</span> News file</h2>
-<ul>
-<li>It is mandatory to use a <code>NEWS</code> or <code>NEWS.md</code> file in the root of your package.
-See the sample <a href="news_template.md">NEWS file</a></li>
-<li>Update the news file before every CRAN release, with a section with the package name,
-version and date of release, like:</li>
-</ul>
-<pre><code>foobar 0.2.0 (2016-04-01)
-=========================</code></pre>
-<ul>
-<li>Under that header, put in sections as needed, including: <code>NEW FEATURES</code>, <code>MINOR IMPROVEMENTS</code>,
-<code>BUG FIXES</code>, <code>DEPRECATED AND DEFUNCT</code>. Under each header list items as needed. For each item give
-a description of the new feature, improvement, bug fix, or deprecated function/feature. Link
-to any related GitHub issue like <code>(#12)</code>. The <code>(#12)</code> will resolve on GitHub in Releases to a
-link to that issue in the repo.</li>
-<li>After you have added a <code>git tag</code> and pushed up to GitHub, add the news items for that
-tagged version to a Release on the Releases tab in your GitHub repo with a title like
-<code>pkgname v0.1.0</code></li>
-<li>If you use <code>NEWS</code>, add it to <code>.Rbuildignore</code>, but not if you use <code>NEWS.md</code></li>
-</ul>
-</div>
-<div id="versioning" class="section level2">
-<h2><span class="header-section-number">10.2</span> Versioning</h2>
-<ul>
-<li><p>We strongly recommend that rOpenSci packages use semantic versioning. A detailed explanation is available on the <a href="http://r-pkgs.had.co.nz/description.html#version">description chapter</a>.</p></li>
-<li><p>Git tag each release after every submission to CRAN. [<a href="http://marker.to/ZYd3kZ">more info</a>]</p></li>
-</ul>
+<div id="editortemplate" class="section level1">
+<h1><span class="header-section-number">A</span> Editor’s template</h1>
+<pre><code>### Editor checks:
 
-</div>
+- [ ] **Fit**: The package meets criteria for [fit](policies.md#fit) and [overlap](policies.md#fit)
+- [ ] **Automated tests:** Package has a testing suite and is tested via Travis-CI or another CI service.
+- [ ] **License:** The package has a CRAN or OSI accepted license
+- [ ] **Repository:** The repository link resolves correctly
+- [ ] **Archive** (JOSS only, may be post-review): The repository DOI resolves correctly
+- [ ] **Version** (JOSS only, may be post-review): Does the release version given match the GitHub release (v1.0.0)?
+
+---
+
+#### Editor comments
+
+---
+
+Reviewers:
+Due date:</code></pre>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="collaboration-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="marketing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="evolution.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
