@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="collaboration-guide.html">
-<link rel="next" href="marketing.html">
+<link rel="prev" href="grooming.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -242,36 +242,128 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="releasing" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Releasing a package</h1>
-<div id="news-file" class="section level2">
-<h2><span class="header-section-number">10.1</span> News file</h2>
-<ul>
-<li>It is mandatory to use a <code>NEWS</code> or <code>NEWS.md</code> file in the root of your package.
-See the sample <a href="news_template.md">NEWS file</a></li>
-<li>Update the news file before every CRAN release, with a section with the package name,
-version and date of release, like:</li>
-</ul>
-<pre><code>foobar 0.2.0 (2016-04-01)
-=========================</code></pre>
-<ul>
-<li>Under that header, put in sections as needed, including: <code>NEW FEATURES</code>, <code>MINOR IMPROVEMENTS</code>,
-<code>BUG FIXES</code>, <code>DEPRECATED AND DEFUNCT</code>. Under each header list items as needed. For each item give
-a description of the new feature, improvement, bug fix, or deprecated function/feature. Link
-to any related GitHub issue like <code>(#12)</code>. The <code>(#12)</code> will resolve on GitHub in Releases to a
-link to that issue in the repo.</li>
-<li>After you have added a <code>git tag</code> and pushed up to GitHub, add the news items for that
-tagged version to a Release on the Releases tab in your GitHub repo with a title like
-<code>pkgname v0.1.0</code></li>
-<li>If you use <code>NEWS</code>, add it to <code>.Rbuildignore</code>, but not if you use <code>NEWS.md</code></li>
-</ul>
+<div id="evolution" class="section level1">
+<h1><span class="header-section-number">Chapter 13</span> Package evolution - changing stuff in your package</h1>
+<p><em>This chapter was initially contributed as a tech note on rOpenSci website by <a href="https://github.com/sckott">Scott Chamberlain</a>, read the original <a href="https://ropensci.org/technotes/2017/01/05/package-evolution/">here</a>.</em></p>
+<div id="philosophy-of-changes" class="section level2">
+<h2><span class="header-section-number">13.1</span> Philosophy of changes</h2>
+<p>Everyone’s free to have their own opinion about how freely parameters/functions/etc. are changed in a library - rules about package changes are not enforced by CRAN or otherwise. Generally, as a library gets more mature, changes to user facing methods (i.e., exported functions in an R package) should become very rare. Libraries that are depended on by many other libraries are likely to be more careful, and should be, about changes.</p>
 </div>
-<div id="versioning" class="section level2">
-<h2><span class="header-section-number">10.2</span> Versioning</h2>
+<div id="parameters-changing-parameter-names" class="section level2">
+<h2><span class="header-section-number">13.2</span> Parameters: changing parameter names</h2>
+<p>Sometimes parameter names must be changed for clarity, or some other reason.</p>
+<p>A possible approach is to catch all parameters passed in to the function and check against some list of parameters, and stop or warn with a meaningful message.</p>
+<pre class="sourceCode r"><code class="sourceCode r">foo_bar &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {
+    calls &lt;-<span class="st"> </span><span class="kw">names</span>(<span class="kw">sapply</span>(<span class="kw">match.call</span>(), deparse))[<span class="op">-</span><span class="dv">1</span>]
+    <span class="cf">if</span>(<span class="kw">any</span>(<span class="st">&quot;x&quot;</span> <span class="op">%in%</span><span class="st"> </span>calls)) {
+        <span class="kw">stop</span>(<span class="st">&quot;use &#39;y&#39; instead of &#39;x&#39;&quot;</span>)
+    }
+    y<span class="op">^</span><span class="dv">2</span>
+}
+
+<span class="kw">foo_bar</span>(<span class="dt">x =</span> <span class="dv">5</span>)
+<span class="co">#&gt; Error in foo_bar(x = 5) : use &#39;y&#39; instead of &#39;x&#39; </span></code></pre>
+<p>Or instead of stopping with error, you could check for use of <code>x</code> parameter and set it to <code>y</code> internally.</p>
+<pre class="sourceCode r"><code class="sourceCode r">foo_bar &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {
+    calls &lt;-<span class="st"> </span><span class="kw">names</span>(<span class="kw">sapply</span>(<span class="kw">match.call</span>(), deparse))[<span class="op">-</span><span class="dv">1</span>]
+    <span class="cf">if</span>(<span class="kw">any</span>(<span class="st">&quot;x&quot;</span> <span class="op">%in%</span><span class="st"> </span>calls)) {
+        y &lt;-<span class="st"> </span>x
+    }
+    y<span class="op">^</span><span class="dv">2</span>
+}
+
+<span class="kw">foo_bar</span>(<span class="dt">x =</span> <span class="dv">5</span>)
+<span class="co">#&gt; 25</span></code></pre>
+<p>Be aware of the parameter <code>...</code>. If your function has <code>...</code>, and you have already removed a parameter (lets call it <code>z</code>), a user may have older code that uses <code>z</code>. When they pass in <code>z</code>, it’s not a parameter in the function definition, and will likely be silently ignored - not what you want. So do make sure to always check for removed parameters moving forward since you can’t force users to upgrade.</p>
+</div>
+<div id="functions-changing-function-names" class="section level2">
+<h2><span class="header-section-number">13.3</span> Functions: changing function names</h2>
+<p>If you must change a function name, do it gradually, as with any package changes.</p>
+<p>Let’s say you have a function <code>foo</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">foo &lt;-<span class="st"> </span><span class="cf">function</span>(x) x <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre>
+<p>However, you want to change the function name to <code>bar</code>.</p>
+<p>Instead of simply changing the function name and <code>foo</code> no longer existing straight away, in the first version of the package that <code>bar</code> appears, make an alias like:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; foo - add 1 to an input</span>
+<span class="co">#&#39; @export</span>
+foo &lt;-<span class="st"> </span><span class="cf">function</span>(x) x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
+
+<span class="co">#&#39; @export</span>
+<span class="co">#&#39; @rdname foo</span>
+bar &lt;-<span class="st"> </span>foo</code></pre>
+<p>With the above, the user can use either <code>foo()</code> or <code>bar()</code> - either will do the same thing, as they are the same function.</p>
+<p>It’s also useful to have a message but then you’ll only want to throw that message when they use the old function name, e.g.,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; foo - add 1 to an input</span>
+<span class="co">#&#39; @export</span>
+foo &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
+    <span class="cf">if</span> (<span class="kw">as.character</span>(<span class="kw">match.call</span>()[[<span class="dv">1</span>]]) <span class="op">==</span><span class="st"> &quot;foo&quot;</span>) {
+        <span class="kw">warning</span>(<span class="st">&quot;please use bar() instead of foo()&quot;</span>, <span class="dt">call. =</span> <span class="ot">FALSE</span>)
+    }
+    x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
+}
+
+<span class="co">#&#39; @export</span>
+<span class="co">#&#39; @rdname foo</span>
+bar &lt;-<span class="st"> </span>foo</code></pre>
+<p>After users have used the package version for a while (with both <code>foo</code> and <code>bar</code>), in the next version you can remove the old function name (<code>foo</code>), and only have <code>bar</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; bar - add 1 to an input</span>
+<span class="co">#&#39; @export</span>
+bar &lt;-<span class="st"> </span><span class="cf">function</span>(x) x <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre>
+</div>
+<div id="functions-deprecate-defunct" class="section level2">
+<h2><span class="header-section-number">13.4</span> Functions: deprecate &amp; defunct</h2>
+<p>To remove a function from a package (let’s say your package name is <code>helloworld</code>), you can use the following protocol:</p>
 <ul>
-<li><p>We strongly recommend that rOpenSci packages use semantic versioning. A detailed explanation is available on the <a href="http://r-pkgs.had.co.nz/description.html#version">description chapter</a>.</p></li>
-<li><p>Git tag each release after every submission to CRAN. [<a href="http://marker.to/ZYd3kZ">more info</a>]</p></li>
+<li>Mark the function as deprecated in package version <code>x</code> (e.g., <code>v0.2.0</code>)</li>
 </ul>
+<p>In the function itself, use <code>.Deprecated()</code> like:</p>
+<pre class="sourceCode r"><code class="sourceCode r">foo &lt;-<span class="st"> </span><span class="cf">function</span>() {
+    <span class="kw">.Deprecated</span>(<span class="dt">msg =</span> <span class="st">&quot;&#39;foo&#39; will be removed in the next version&quot;</span>)
+}</code></pre>
+<p>There’s options in <code>.Deprecated</code> for specifying a new function name, as well as a new package name, which makes sense when moving functions into different packages.</p>
+<p>The message that’s given by <code>.Deprecated</code> is a warning, so can be suppressed by users with <code>suppressWarnings()</code> if desired.</p>
+<p>Make a man page for deprecated functions like:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Deprecated functions in helloworld</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; These functions still work but will be removed (defunct) in the next version.</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; \itemize{</span>
+<span class="co">#&#39;  \item \code{\link{foo}}: This function is deprecated, and will</span>
+<span class="co">#&#39;  be removed in the next version of this package.</span>
+<span class="co">#&#39; }</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; @name helloworld-deprecated</span>
+<span class="ot">NULL</span></code></pre>
+<p>This creates a man page that users can access like <code>?helloworld-deprecated</code> and they’ll see in the documentation index. Add any functions to this page as needed, and take away as a function moves to defunct (see below).</p>
+<ul>
+<li>In the next version (<code>v0.3.0</code>) you can make the function defunct (that is, completely gone from the package, except for a man page with a note about it).</li>
+</ul>
+<p>In the function itself, use <code>.Defunct()</code> like:</p>
+<pre class="sourceCode r"><code class="sourceCode r">foo &lt;-<span class="st"> </span><span class="cf">function</span>() {
+    <span class="kw">.Defunct</span>(<span class="dt">msg =</span> <span class="st">&quot;&#39;foo&#39; has been removed from this package&quot;</span>)
+}</code></pre>
+<p>Note that the message in <code>.Defunct</code> is an error, so the function stops - whereas <code>.Deprecated</code> returned a warning, letting the function proceed.</p>
+<p>In addition, it’s good to add <code>...</code> to all defunct functions so that if users pass in any parameters they’ll get the same defunct message instead of a <code>unused argument</code> message, so like:</p>
+<pre class="sourceCode r"><code class="sourceCode r">foo &lt;-<span class="st"> </span><span class="cf">function</span>(...) {
+    <span class="kw">.Defunct</span>(<span class="dt">msg =</span> <span class="st">&quot;&#39;foo&#39; has been removed from this package&quot;</span>)
+}</code></pre>
+<p>Without <code>...</code> gives:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">foo</span>(<span class="dt">x =</span> <span class="dv">5</span>)
+<span class="co">#&gt; Error in foo(x = 5) : unused argument (x = 5)</span></code></pre>
+<p>And with <code>...</code> gives:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">foo</span>(<span class="dt">x =</span> <span class="dv">5</span>)
+<span class="co">#&gt; Error: &#39;foo&#39; has been removed from this package</span></code></pre>
+<p>Make a man page for defunct functions like:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Defunct functions in helloworld</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; These functions are gone, no longer available.</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; \itemize{</span>
+<span class="co">#&#39;  \item \code{\link{foo}}: This function is defunct.</span>
+<span class="co">#&#39; }</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; @name helloworld-defunct</span>
+<span class="ot">NULL</span></code></pre>
+<p>This creates a man page that users can access like <code>?helloworld-defunct</code> and they’ll see in the documentation index. Add any functions to this page as needed. You’ll likely want to keep this man page indefinitely.</p>
 
 </div>
 </div>
@@ -280,8 +372,8 @@ tagged version to a Release on the Releases tab in your GitHub repo with a title
           </div>
         </div>
       </div>
-<a href="collaboration-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="marketing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="grooming.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
