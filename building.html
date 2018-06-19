@@ -280,8 +280,12 @@ We strongly recommend that package developers read Hadley Wickham’s concise bu
 <ul>
 <li><p>We strongly recommend <code>snake_case</code> over all other styles unless you are porting over a package that is already in wide use.</p></li>
 <li><p>Avoid function name conflicts with base packages or other popular ones (e.g. <code>ggplot2</code>, <code>dplyr</code>, <code>magrittr</code>, <code>data.table</code>)</p></li>
+<li><p>Functions and arguments naming should be chosen work together to form a common, logical programming API that is easy to read, and autocomplete.</p>
+<ul>
 <li><p>Consider an <code>object_verb()</code> naming scheme for functions in your package that take a common data type or interact with a common API. <code>object</code> refers to the data/API and <code>verb</code> the primary action. This scheme helps avoid namespace conflicts with packages that may have similar verbs, and makes code readable and easy to auto-complete. For instance, in <strong>stringi</strong>, functions starting with <code>stri_</code> manipulate strings (<code>stri_join()</code>, <code>stri_sort()</code>, and in <strong>googlesheets</strong> functions starting with <code>gs_</code> are calls to the Google Sheets API (<code>gs_auth()</code>, <code>gs_user()</code>, <code>gs_download()</code>).</p></li>
+<li><p>Argument naming and order should be consistent across functions that use similar inputs.</p></li>
 <li><p>For functions that manipulate an object/data and return an object/data of the same type, make the object/data the first argument of the function so as to enhance compatibility with the pipe operator (<code>%&gt;%</code>)</p></li>
+</ul></li>
 <li><p>Package functions importing data should not import data to the global environment, but instead must return objects. Assignments to the global environment are to be avoided in general.</p></li>
 <li><p>For more information on how to style your code, name functions, and R scripts inside the <code>R/</code> folder, we recommend reading the <a href="http://r-pkgs.had.co.nz/r.html">code chapter in Hadley’s book</a>. We recommend the <a href="https://github.com/r-lib/styler"><code>styler</code> package</a> for automating part of the code styling.</p></li>
 </ul>
@@ -365,6 +369,7 @@ can be found at <em>link</em>.</p></li>
 <ul>
 <li><p>Use <code>Imports</code> instead of <code>Depends</code> for packages providing functions from other packages. Make sure to list packages used for testing (<code>testthat</code>), and documentation (<code>knitr</code>, <code>roxygen2</code>) in your <code>Suggests</code> section of package dependencies. If you use any packages in your examples sections, make sure to list those, if not already listed elsewhere, in <code>Suggests</code> section of package dependencies.</p></li>
 <li><p>For most cases where you must expose functions from dependencies to the user, you should import and re-export those individual functions rather than listing them in the <code>Depends</code> fields. For instance, if functions in your package produce <code>raster</code> objects, you might re-export only printing and plotting functions from the <strong>raster</strong> package.</p></li>
+<li><p>If your package uses a system dependency, you should indicate it in DESCRIPTION and check for it in the configure script and give a helpful error message if it cannot be found. <a href="https://github.com/ropensci/magick/blob/c116b2b8505f491db72a139b61cd543b7a2ce873/DESCRIPTION#L19">Example of a line indicating a system dependency in DESCRIPTION</a>, <a href="https://github.com/ropensci/magick/blob/c116b2b8505f491db72a139b61cd543b7a2ce873/configure#L72">example of how a configure script checks for the dependency</a>.</p></li>
 </ul>
 </div>
 <div id="recommended-scaffolding" class="section level2">
