@@ -1,8 +1,9 @@
 # Releasing a package {#releasing}
 
-Your package should have different versions over time: snapshots of a state of the package that you can release to CRAN for instance. These versions should be properly _numbered_, _released_ and _described in a NEWS file_. More details below.
-
-Note that you could streamline the process of updating NEWS and versioning your package by using [the `fledge` package](https://github.com/krlmlr/fledge).
+<div class="summaryblock">
+<p>Your package should have different versions over time: snapshots of a state of the package that you can release to CRAN for instance. These versions should be properly <em>numbered</em>, <em>released</em> and <em>described in a NEWS file</em>. More details below.</p>
+<p>Note that you could streamline the process of updating NEWS and versioning your package by using <a href="https://github.com/krlmlr/fledge">the <code>fledge</code> package</a>.</p>
+</div>
 
 ## Versioning
 
