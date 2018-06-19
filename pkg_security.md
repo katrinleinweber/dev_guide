@@ -1,6 +1,8 @@
 # Package Development Security Best Practices
 
-This chapter isn't written yet. It should mention the elements outlined in [this bookdown](https://ropenscilabs.github.io/r-security-practices/) ([repo](https://github.com/ropenscilabs/r-security-practices)) started at the unconf 2017, or have a link to this book/a similar book when written.
+<div class="summaryblock">
+<p>This chapter isn’t written yet. It should mention the elements outlined in <a href="https://ropenscilabs.github.io/r-security-practices/">this bookdown</a> (<a href="https://github.com/ropenscilabs/r-security-practices">repo</a>) started at the unconf 2017, or have a link to this book/a similar book when written.</p>
+</div>
 
 Also interesting are these unconf projects:
 

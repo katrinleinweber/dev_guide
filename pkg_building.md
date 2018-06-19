@@ -67,6 +67,8 @@ can be found at *link*.
 [![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
 ```
 
+* Add a code of conduct and contribution guidelines, cf [this section of the book](#friendlyfiles).
+
 * See the [gistr README](https://github.com/ropensci/gistr#gistr) for a good example README to follow.
 
 ## Documentation
@@ -127,6 +129,8 @@ Please do not list editors as contributors. Your participation in and contributi
 
 * For most cases where you must expose functions from dependencies to the user, you should import and re-export those individual functions rather than listing them in the `Depends` fields.  For instance, if functions in your package produce `raster` objects, you might re-export only printing and plotting functions from the **raster** package.
 
+* If your package uses a system dependency, you should indicate it in DESCRIPTION and check for it in the configure script and give a helpful error message if it cannot be found. [Example of a line indicating a system dependency in DESCRIPTION](https://github.com/ropensci/magick/blob/c116b2b8505f491db72a139b61cd543b7a2ce873/DESCRIPTION#L19), [example of how a configure script checks for the dependency](https://github.com/ropensci/magick/blob/c116b2b8505f491db72a139b61cd543b7a2ce873/configure#L72).
+
 ## Recommended scaffolding
 
 * For http requests we strongly recommend using `httr` over `RCurl`.
@@ -158,3 +162,4 @@ This is a collection of CRAN gotchas that are worth avoiding at the outset.
 
 * If you are submitting a package to rOpenSci via the [onboarding repo](https://github.com/ropensci/onboarding), you can direct further questions to the rOpenSci team in the issue tracker, or in our [discussion forum](https://discuss.ropensci.org/).
 
+* Before submitting a package use the [**goodpractice**](https://github.com/MangoTheCat/goodpractice) package (`goodpractice::gp()`) as a guide to improve your package, since most exceptions to it will need to be justified. E.g. the use of `foo` might be generally bad and therefore flagged by `goodpractice` but you had a good reason to use it in your package.

@@ -1,6 +1,9 @@
 # Package evolution - changing stuff in your package {#evolution}
 
-_This chapter was initially contributed as a tech note on rOpenSci website by [Scott Chamberlain](https://github.com/sckott), read the original [here](https://ropensci.org/technotes/2017/01/05/package-evolution/)._
+<div class="summaryblock">
+<p>This chapter presents our guidance for changing stuff in your package: changing parameter names, changing function names, deprecting functions.</p>
+<p><em>This chapter was initially contributed as a tech note on rOpenSci website by <a href="https://github.com/sckott">Scott Chamberlain</a>, read the original <a href="https://ropensci.org/technotes/2017/01/05/package-evolution/">here</a>.</em></p>
+</div>
 
 ## Philosophy of changes
 

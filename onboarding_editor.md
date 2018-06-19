@@ -1,9 +1,12 @@
 # Onboarding Guide for Editors
 
-Onboarding at rOpenSci is managed by a team of editors.  We are piloting
-a system of a rotating Editor-in-Chief (EiC).
+<div class="summaryblock">
+<p>Onboarding at rOpenSci is managed by a team of editors. We are piloting a system of a rotating Editor-in-Chief (EiC).</p>
+<p>This chapter presents the responsabilities <a href="#eicchecklist">of the Editor-in-Chief</a>, of <a href="#editorchecklist">any editor in charge of a submission</a>, and <a href="#outofscoperesponse">how to respond to an out-of-scope submission</a>.</p>
+<p>If you’re a guest editor, thanks for helping! Please contact the editor who invited you to handle a submission for any question you might have.</p>
+</div>
 
-## EiC Responsibilities
+## EiC Responsibilities {#eicchecklist}
 
 The EiC serves for 3 months or a time agreed to by all members of the editorial
 board. The EiC plays the following roles
@@ -19,14 +22,14 @@ is posted to the rOpenSci Slack onboarding channel, tagging all editors.
  - Monitors pace of review process and reminds other editors to move packages
  along as needed.
  
-## Responding to out-of-scope submissions
+## Responding to out-of-scope submissions {#outofscoperesponse}
 
 Thank authors for their submission, explain the reasons of the decision, and direct them to other publication venues if relevant, and to rOpenSci discuss forum. Use wording from [Aims and scope](#aims-and-scope) in particular regarding the evolution of scope over time, and the overlap and differences between unconf/staff/onboarding development.
 
 [Examples of out-of-scope submissions and responses](https://github.com/ropensci/onboarding/issues?q=is%3Aissue+is%3Aclosed+label%3Aout-of-scope).
 
 
-## Handling Editor's Checklist
+## Handling Editor's Checklist {#editorchecklist}
 
 ### Upon submission:
 
@@ -39,9 +42,7 @@ Thank authors for their submission, explain the reasons of the decision, and dir
     If reject, close issue, direct authors to other groups/repos as appropriate.
 -   Check that mandatory parts of template are complete.  If not, close issue,
     direct authors toward appropriate instructions.
--   Run run automated tests: `devtools::check()`, `goodpractice::gp()`, `devtools::spell_check()`. Run
-    `covr::package_coverage()` using `NOT_CRAN` if needed, as well. Report
-    relevant outputs in the issue thread.
+-   Run run automated tests: `devtools::check()`, `goodpractice::gp()` (most exceptions will need to be justified by the author in the particular context of their package.), `devtools::spell_check()`. Run `covr::package_coverage()` using `NOT_CRAN` if needed, as well. Report relevant outputs in the issue thread.
     -   For packages with compiled code or linking to external libraries or languages,
         check on multiple platforms, using win-builder, r-hub, or other editors
         as needed.

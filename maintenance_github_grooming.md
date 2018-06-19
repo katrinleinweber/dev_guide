@@ -1,8 +1,10 @@
 # GitHub Grooming {#grooming}
 
-rOpenSci packages are currently in their vast majority developed on GitHub. Here are a few tips to leverage the platform.
+<div class="summaryblock">
+<p>rOpenSci packages are currently in their vast majority developed on GitHub. Here are a few tips to leverage the platform in a section about <a href="#repodiscoverability">making your repo more discoverable</a> and a section about <a href="#marketown">marketing your own GitHub account after onboarding your package</a>.</p>
+</div>
 
-## Make your repository more discoverable
+## Make your repository more discoverable {#repodiscoverability}
 
 ### GitHub repo topics
 
@@ -31,7 +33,7 @@ This way the language classification and statistics of your repository will more
 More info about GitHub linguist overrides [here](https://github.com/github/linguist#overrides).
 
 
-## Market your own account
+## Market your own account {#marketown}
 
 * As the author of an onboarded package, you are now a member of the ropensci GitHub organization. By default organization memberships are private, see [how to make it public in GitHub docs](https://help.github.com/articles/publicizing-or-hiding-organization-membership/).
 
