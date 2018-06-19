@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>rOpenSci Packages: Development, Maintenance, and Peer Review</title>
   <meta name="description" content="Extended version of the onboarding packaging guide.">
-  <meta name="generator" content="bookdown 0.7.12 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
 
   <meta property="og:title" content="rOpenSci Packages: Development, Maintenance, and Peer Review" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="rOpenSci onboarding editorial team: Scott Chamberlain, Anna Krystalli, Lincoln Mullen, Karthik Ram, Noam Ross, Maëlle Salmon">
 
 
-<meta name="date" content="2018-06-16">
+<meta name="date" content="2018-06-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -215,8 +215,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="releasing.html"><a href="releasing.html"><i class="fa fa-check"></i><b>10</b> Releasing a package</a><ul>
-<li class="chapter" data-level="10.1" data-path="releasing.html"><a href="releasing.html#news"><i class="fa fa-check"></i><b>10.1</b> News file</a></li>
-<li class="chapter" data-level="10.2" data-path="releasing.html"><a href="releasing.html#versioning"><i class="fa fa-check"></i><b>10.2</b> Versioning</a></li>
+<li class="chapter" data-level="10.1" data-path="releasing.html"><a href="releasing.html#versioning"><i class="fa fa-check"></i><b>10.1</b> Versioning</a></li>
+<li class="chapter" data-level="10.2" data-path="releasing.html"><a href="releasing.html#releasing-1"><i class="fa fa-check"></i><b>10.2</b> Releasing</a></li>
+<li class="chapter" data-level="10.3" data-path="releasing.html"><a href="releasing.html#news"><i class="fa fa-check"></i><b>10.3</b> News file</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="marketing.html"><a href="marketing.html"><i class="fa fa-check"></i><b>11</b> Marketing your package</a></li>
 <li class="chapter" data-level="12" data-path="grooming.html"><a href="grooming.html"><i class="fa fa-check"></i><b>12</b> GitHub Grooming</a><ul>
@@ -259,33 +260,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="releasing" class="section level1">
 <h1><span class="header-section-number">Chapter 10</span> Releasing a package</h1>
-<div id="news" class="section level2">
-<h2><span class="header-section-number">10.1</span> News file</h2>
+<p>Your package should have different versions over time: snapshots of a state of the package that you can release to CRAN for instance. These versions should be properly <em>numbered</em>, <em>released</em> and <em>described in a NEWS file</em>. More details below.</p>
+<p>Note that you could streamline the process of updating NEWS and versioning your package by using <a href="https://github.com/krlmlr/fledge">the <code>fledge</code> package</a>.</p>
+<div id="versioning" class="section level2">
+<h2><span class="header-section-number">10.1</span> Versioning</h2>
 <ul>
-<li>It is mandatory to use a <code>NEWS</code> or <code>NEWS.md</code> file in the root of your package. We recommend using <code>NEWS.md</code> to make the file <a href="http://happygitwithr.com/repo-browsability.html">more browsable</a>.
-See the sample <a href="newstemplate.html#newstemplate">NEWS file</a></li>
-<li>Update the news file before every CRAN release, with a section with the package name,
-version and date of release, like:</li>
+<li>We strongly recommend that rOpenSci packages use semantic versioning. A detailed explanation is available on the <a href="http://r-pkgs.had.co.nz/description.html#version">description chapter</a>.</li>
+</ul>
+</div>
+<div id="releasing-1" class="section level2">
+<h2><span class="header-section-number">10.2</span> Releasing</h2>
+<ul>
+<li>Git tag each release after every submission to CRAN. [more info](<a href="https://help.github.com/articles/creating-releases/" class="uri">https://help.github.com/articles/creating-releases/</a>]</li>
+</ul>
+</div>
+<div id="news" class="section level2">
+<h2><span class="header-section-number">10.3</span> News file</h2>
+<p>A NEWS file describing changes associated with each version makes it easier for users to see what’s changing in the package and how it might impact their workflow. You must add one for your package, and make it easy to read.</p>
+<ul>
+<li>It is mandatory to use a <code>NEWS</code> or <code>NEWS.md</code> file in the root of your package. We recommend using <code>NEWS.md</code> to make the file <a href="http://happygitwithr.com/repo-browsability.html">more browsable</a>.</li>
+<li>Please use our example<a href="newstemplate.html#newstemplate">NEWS file</a> as a model. You can find a good NEWS file in the wild <a href="https://github.com/ropensci/taxize/blob/master/NEWS.md">in the <code>taxize</code> package repo</a> for instance.</li>
+<li>If you use <code>NEWS</code>, add it to <code>.Rbuildignore</code>, but not if you use <code>NEWS.md</code></li>
+<li>Update the news file before every CRAN release, with a section with the package name, version and date of release, like (as seen in our example<a href="newstemplate.html#newstemplate">NEWS file</a>:</li>
 </ul>
 <pre><code>foobar 0.2.0 (2016-04-01)
 =========================</code></pre>
 <ul>
-<li>Under that header, put in sections as needed, including: <code>NEW FEATURES</code>, <code>MINOR IMPROVEMENTS</code>,
-<code>BUG FIXES</code>, <code>DEPRECATED AND DEFUNCT</code>. Under each header list items as needed. For each item give
+<li>Under that header, put in sections as needed, including: <code>NEW FEATURES</code>, <code>MINOR IMPROVEMENTS</code>, <code>BUG FIXES</code>, <code>DEPRECATED AND DEFUNCT</code>, <code>DOCUMENTATION FIXES</code> and any special heading grouping a large number of changes. Under each header list items as needed (as seen in our example<a href="newstemplate.html#newstemplate">NEWS file</a>. For each item give
 a description of the new feature, improvement, bug fix, or deprecated function/feature. Link
-to any related GitHub issue like <code>(#12)</code>. The <code>(#12)</code> will resolve on GitHub in Releases to a
-link to that issue in the repo.</li>
-<li>After you have added a <code>git tag</code> and pushed up to GitHub, add the news items for that
-tagged version to a Release on the Releases tab in your GitHub repo with a title like
-<code>pkgname v0.1.0</code></li>
-<li>If you use <code>NEWS</code>, add it to <code>.Rbuildignore</code>, but not if you use <code>NEWS.md</code></li>
-</ul>
-</div>
-<div id="versioning" class="section level2">
-<h2><span class="header-section-number">10.2</span> Versioning</h2>
-<ul>
-<li><p>We strongly recommend that rOpenSci packages use semantic versioning. A detailed explanation is available on the <a href="http://r-pkgs.had.co.nz/description.html#version">description chapter</a>.</p></li>
-<li><p>Git tag each release after every submission to CRAN. [<a href="http://marker.to/ZYd3kZ">more info</a>]</p></li>
+to any related GitHub issue like <code>(#12)</code>. The <code>(#12)</code> will resolve on GitHub in Releases to a link to that issue in the repo.</li>
+<li>After you have added a <code>git tag</code> and pushed up to GitHub, add the news items for that tagged version to the Release notes of a release in your GitHub repo with a title like <code>pkgname v0.1.0</code>. See <a href="https://help.github.com/articles/creating-releases/">GitHub docs about creating a release</a>.</li>
 </ul>
 
 </div>
