@@ -17,9 +17,13 @@
 
 * Avoid function name conflicts with base packages or other popular ones (e.g. `ggplot2`, `dplyr`, `magrittr`, `data.table`)
 
-* Consider an `object_verb()` naming scheme for functions in your package that take a common data type or interact with a common API. `object` refers to the data/API and `verb` the primary action.  This scheme helps avoid namespace conflicts with packages that may have similar verbs, and makes code readable and easy to auto-complete.  For instance, in **stringi**, functions starting with `stri_` manipulate strings (`stri_join()`, `stri_sort()`, and in **googlesheets** functions starting with `gs_` are calls to the Google Sheets API (`gs_auth()`, `gs_user()`, `gs_download()`).
+* Functions and arguments naming should be chosen work together to form a common, logical programming API that is easy to read, and autocomplete. 
 
-* For functions that manipulate an object/data and return an object/data of the same type, make the object/data the first argument of the function so as to enhance compatibility with the pipe operator (`%>%`)
+    * Consider an `object_verb()` naming scheme for functions in your package that take a common data type or interact with a common API. `object` refers to the data/API and `verb` the primary action.  This scheme helps avoid namespace conflicts with packages that may have similar verbs, and makes code readable and easy to auto-complete.  For instance, in **stringi**, functions starting with `stri_` manipulate strings (`stri_join()`, `stri_sort()`, and in **googlesheets** functions starting with `gs_` are calls to the Google Sheets API (`gs_auth()`, `gs_user()`, `gs_download()`).
+    
+    * Argument naming and order should be consistent across functions that use similar inputs.
+
+    * For functions that manipulate an object/data and return an object/data of the same type, make the object/data the first argument of the function so as to enhance compatibility with the pipe operator (`%>%`)
 
 * Package functions importing data should not import data to the global environment, but instead must return objects. Assignments to the global environment are to be avoided in general.
 
@@ -128,6 +132,8 @@ Please do not list editors as contributors. Your participation in and contributi
 * Use `Imports` instead of `Depends` for packages providing functions from other packages. Make sure to list packages used for testing (`testthat`), and documentation (`knitr`, `roxygen2`) in your `Suggests` section of package dependencies. If you use any packages in your examples sections, make sure to list those, if not already listed elsewhere, in `Suggests` section of package dependencies.
 
 * For most cases where you must expose functions from dependencies to the user, you should import and re-export those individual functions rather than listing them in the `Depends` fields.  For instance, if functions in your package produce `raster` objects, you might re-export only printing and plotting functions from the **raster** package.
+
+* If your package uses a system dependency, you should indicate it in DESCRIPTION and check for it in the configure script and give a helpful error message if it cannot be found. [Example of a line indicating a system dependency in DESCRIPTION](https://github.com/ropensci/magick/blob/c116b2b8505f491db72a139b61cd543b7a2ce873/DESCRIPTION#L19), [example of how a configure script checks for the dependency](https://github.com/ropensci/magick/blob/c116b2b8505f491db72a139b61cd543b7a2ce873/configure#L72).
 
 ## Recommended scaffolding
 
