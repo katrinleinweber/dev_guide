@@ -260,8 +260,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="onboarding-guide-for-reviewers" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Onboarding Guide for Reviewers</h1>
-<p>To review a package, please begin by copying our <a href="reviewtemplate.html#reviewtemplate">review template</a>
-and using it as a high-level checklist. In addition to checking off the minimum criteria,
+<p>To review a package, please begin by copying our <a href="reviewtemplate.html#reviewtemplate">review template</a> and using it as a high-level checklist. In addition to checking off the minimum criteria,
 we ask you provide general comments addressing the following:</p>
 <ul>
 <li>Does the code comply with general principles in the <a href="https://mozillascience.github.io/codeReview/review.html">Mozilla reviewing guide</a>?</li>
@@ -272,18 +271,15 @@ we ask you provide general comments addressing the following:</p>
 <li>Are there performance improvements that could be made?</li>
 <li>Is the documentation (installation instructions/vignettes/examples/demos) clear and sufficient?</li>
 </ul>
-<p>We encourage you to use automated tools to facilitate your reviewing. These
-include:</p>
+<p>Please be respectful and kind to the authors in your reviews. Our <a href="policies.html#code-of-conduct">code of conduct</a> is mandatory for everyone involved in our review process. We expect you to submit your review withing 3 weeks, depending on the deadline set by the editor. Please contact the editor directly or in the submission thread to inform them about possible delays.</p>
+<p>We encourage you to use automated tools to facilitate your reviewing. These include:</p>
 <ul>
 <li>Checking the package’s logs on its continuous integration services (Travs-CI, Codecov, etc.)</li>
 <li>Running <code>devtools::check()</code> and <code>devtools::test()</code> on the package to find any errors that may be missed on the author’s system.</li>
 <li>Using the <strong>covr</strong> package to examine the extent of test coverage.</li>
 <li>Using the <a href="https://github.com/MangoTheCat/goodpractice"><strong>goodpractice</strong></a> package (<code>goodpractice::gp()</code>) to identify likely sources of errors and style issues.</li>
-<li>Using <code>devtools::spell_check()</code> to find spelling errors in DESCRIPTION and
-manual files, and RStudio’s spellchecker to find spelling errors in vignettes and
-README files.</li>
+<li>Using <code>devtools::spell_check()</code> to find spelling errors in DESCRIPTION and manual files, and RStudio’s spellchecker to find spelling errors in vignettes and README files.</li>
 </ul>
-<p>Please be respectful and kind to the authors in your reviews. Our <a href="policies.html#code-of-conduct">code of conduct</a> is mandatory for everyone involved in our review process.</p>
 <p>First-time reviewers may find it helpful to read some previous reviews. In general you can find submission threads of onboarded packages <a href="https://github.com/ropensci/onboarding/issues?q=is%3Aissue+is%3Aclosed+label%3A6%2Fapproved">here</a>. Here are a few chosen examples (note that your reviews do not need to be as long as examples):</p>
 <ul>
 <li><p><code>rtika</code> <a href="https://github.com/ropensci/onboarding/issues/191#issuecomment-367166658">review 1</a> and <a href="https://github.com/ropensci/onboarding/issues/191#issuecomment-368254623">review 2</a></p></li>

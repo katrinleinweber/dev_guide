@@ -285,6 +285,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="be-generous-with-attributions" class="section level3">
 <h3><span class="header-section-number">9.2.2</span> Be generous with attributions</h3>
 <p>If someone contributes to your repository consider adding them in DESCRIPTION, as contributor (“ctb”) for small contributions, author (“aut”) for bigger contributions. Also consider adding their name near the feature/bug fix line in <a href="releasing.html#news">NEWS.md</a> We recommend your being generous with such acknowledgements.</p>
+<p>As a reminder from <a href="building.html#building">our packaging guidelines</a> if your package was reviewed and you feel that your reviewers have made a substantial contribution to the development of your package, you may list them in the <code>Authors@R</code> field with a Reviewer contributor type (<code>&quot;rev&quot;</code>), like so:</p>
+<pre><code>    person(&quot;Bea&quot;, &quot;Hernández&quot;, role = &quot;rev&quot;,
+    comment = &quot;Bea reviewed the package for ropensci, see &lt;https://github.com/ropensci/onboarding/issues/116&gt;&quot;),</code></pre>
+<p>Only include reviewers after asking for their consent. Note that ‘rev’ will raise a CRAN NOTE unless the package is built using R v3.5 (r-devel as of 2017-09-21). Please do not list editors as contributors. Your participation in and contribution to rOpenSci is thanks enough!</p>
 </div>
 <div id="onboarding-collaborators" class="section level3">
 <h3><span class="header-section-number">9.2.3</span> Onboarding collaborators</h3>
