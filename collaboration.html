@@ -210,9 +210,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1.3" data-path="collaboration.html"><a href="collaboration.html#issue-labelling"><i class="fa fa-check"></i><b>9.1.3</b> Issue labelling</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="collaboration.html"><a href="collaboration.html#workingcollaborators"><i class="fa fa-check"></i><b>9.2</b> Working with collaborators</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="collaboration.html"><a href="collaboration.html#assessing-a-pr"><i class="fa fa-check"></i><b>9.2.1</b> Assessing a PR</a></li>
-<li class="chapter" data-level="9.2.2" data-path="collaboration.html"><a href="collaboration.html#be-generous-with-attributions"><i class="fa fa-check"></i><b>9.2.2</b> Be generous with attributions</a></li>
-<li class="chapter" data-level="9.2.3" data-path="collaboration.html"><a href="collaboration.html#onboarding-collaborators"><i class="fa fa-check"></i><b>9.2.3</b> Onboarding collaborators</a></li>
+<li class="chapter" data-level="9.2.1" data-path="collaboration.html"><a href="collaboration.html#onboarding-collaborators"><i class="fa fa-check"></i><b>9.2.1</b> Onboarding collaborators</a></li>
+<li class="chapter" data-level="9.2.2" data-path="collaboration.html"><a href="collaboration.html#assessing-a-pr"><i class="fa fa-check"></i><b>9.2.2</b> Assessing a PR</a></li>
+<li class="chapter" data-level="9.2.3" data-path="collaboration.html"><a href="collaboration.html#attributions"><i class="fa fa-check"></i><b>9.2.3</b> Be generous with attributions</a></li>
+<li class="chapter" data-level="9.2.4" data-path="collaboration.html"><a href="collaboration.html#welcoming-collaborators-to-ropensci"><i class="fa fa-check"></i><b>9.2.4</b> Welcoming collaborators to rOpenSci</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="releasing.html"><a href="releasing.html"><i class="fa fa-check"></i><b>10</b> Releasing a package</a><ul>
@@ -286,20 +287,27 @@ This chapter contains our guidance for collaboration, in a <a href="collaboratio
 </div>
 <div id="workingcollaborators" class="section level2">
 <h2><span class="header-section-number">9.2</span> Working with collaborators</h2>
+<div id="onboarding-collaborators" class="section level3">
+<h3><span class="header-section-number">9.2.1</span> Onboarding collaborators</h3>
+<p>There’s no general rOpenSci rule as to how you should onboard collaborators. You should increase their rights to the repo as you gain trust, and you should definitely ackonwledge contributions (see<a href="collaboration.html#attributions">this section</a>).</p>
+<p>You can ask a new collaborator to make PRs (see following section for assessing a PR locally, i.e. beyond CI checks) to dev/master and assess them before merging, and after a while let them push to master, although you might want to keep a system of PR reviews… even for yourself once you have team mates!</p>
+<p>A possible model for onboarding collaborators is provided by Jim Hester in <a href="https://github.com/jimhester/lintr/issues/318">his <code>lintr</code> repo</a>.</p>
+<p>If your problem is <em>recruiting</em> collaborators, you can post an open call like Jim Hester’s <a href="https://twitter.com/jimhester_/status/997109466674819074">on Twitter</a>, <a href="(https://github.com/jimhester/lintr/issues/318)">GitHub</a>, and as an rOpenSci package author, you can ask for help in rOpenSci slack and ask rOpenSci team for ideas for recruiting new collaborators.</p>
+</div>
 <div id="assessing-a-pr" class="section level3">
-<h3><span class="header-section-number">9.2.1</span> Assessing a PR</h3>
+<h3><span class="header-section-number">9.2.2</span> Assessing a PR</h3>
 <p>Cf <a href="http://happygitwithr.com/pr-extend.html">“Explore and extend a pull request” in happygitwithr.com</a></p>
 </div>
-<div id="be-generous-with-attributions" class="section level3">
-<h3><span class="header-section-number">9.2.2</span> Be generous with attributions</h3>
+<div id="attributions" class="section level3">
+<h3><span class="header-section-number">9.2.3</span> Be generous with attributions</h3>
 <p>If someone contributes to your repository consider adding them in DESCRIPTION, as contributor (“ctb”) for small contributions, author (“aut”) for bigger contributions. Also consider adding their name near the feature/bug fix line in <a href="releasing.html#news">NEWS.md</a> We recommend your being generous with such acknowledgements.</p>
 <p>As a reminder from <a href="building.html#building">our packaging guidelines</a> if your package was reviewed and you feel that your reviewers have made a substantial contribution to the development of your package, you may list them in the <code>Authors@R</code> field with a Reviewer contributor type (<code>&quot;rev&quot;</code>), like so:</p>
 <pre><code>    person(&quot;Bea&quot;, &quot;Hernández&quot;, role = &quot;rev&quot;,
     comment = &quot;Bea reviewed the package for ropensci, see &lt;https://github.com/ropensci/onboarding/issues/116&gt;&quot;),</code></pre>
 <p>Only include reviewers after asking for their consent. Note that ‘rev’ will raise a CRAN NOTE unless the package is built using R v3.5 (r-devel as of 2017-09-21). Please do not list editors as contributors. Your participation in and contribution to rOpenSci is thanks enough!</p>
 </div>
-<div id="onboarding-collaborators" class="section level3">
-<h3><span class="header-section-number">9.2.3</span> Onboarding collaborators</h3>
+<div id="welcoming-collaborators-to-ropensci" class="section level3">
+<h3><span class="header-section-number">9.2.4</span> Welcoming collaborators to rOpenSci</h3>
 <p>If you give someone write permissions to the repository, please contact one of <a href="onboardingintro.html#associateditors">the editors</a> or <a href="github.com/stefaniebutland">Stefanie Butland</a> so that this new contributor might</p>
 <ul>
 <li><p>get invited to ropensci GitHub organization (instead of being <a href="https://help.github.com/articles/repository-permission-levels-for-an-organization/#outside-collaborators">outside collaborators</a>)</p></li>
