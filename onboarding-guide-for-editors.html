@@ -25,7 +25,7 @@
 <meta name="author" content="rOpenSci onboarding editorial team: Scott Chamberlain, Anna Krystalli, Lincoln Mullen, Karthik Ram, Noam Ross, Maëlle Salmon">
 
 
-<meta name="date" content="2018-06-19">
+<meta name="date" content="2018-06-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -144,13 +144,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="building.html"><a href="building.html#package-dependencies"><i class="fa fa-check"></i><b>1.8</b> Package dependencies</a></li>
 <li class="chapter" data-level="1.9" data-path="building.html"><a href="building.html#recommended-scaffolding"><i class="fa fa-check"></i><b>1.9</b> Recommended scaffolding</a></li>
 <li class="chapter" data-level="1.10" data-path="building.html"><a href="building.html#console-messages"><i class="fa fa-check"></i><b>1.10</b> Console messages</a></li>
-<li class="chapter" data-level="1.11" data-path="building.html"><a href="building.html#miscellaneous-cran-gotchas"><i class="fa fa-check"></i><b>1.11</b> Miscellaneous CRAN gotchas</a></li>
+<li class="chapter" data-level="1.11" data-path="building.html"><a href="building.html#crangotchas"><i class="fa fa-check"></i><b>1.11</b> Miscellaneous CRAN gotchas</a></li>
 <li class="chapter" data-level="1.12" data-path="building.html"><a href="building.html#further-guidance"><i class="fa fa-check"></i><b>1.12</b> Further guidance</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ci.html"><a href="ci.html"><i class="fa fa-check"></i><b>2</b> Continuous Integration Best Practices</a><ul>
 <li class="chapter" data-level="2.1" data-path="ci.html"><a href="ci.html#why-use-continuous-integration"><i class="fa fa-check"></i><b>2.1</b> Why use continuous integration?</a></li>
 <li class="chapter" data-level="2.2" data-path="ci.html"><a href="ci.html#how-to-use-continuous-integration"><i class="fa fa-check"></i><b>2.2</b> How to use continuous integration?</a></li>
-<li class="chapter" data-level="2.3" data-path="ci.html"><a href="ci.html#which-continuous-integration-services"><i class="fa fa-check"></i><b>2.3</b> Which continuous integration service(s)?</a><ul>
+<li class="chapter" data-level="2.3" data-path="ci.html"><a href="ci.html#whichci"><i class="fa fa-check"></i><b>2.3</b> Which continuous integration service(s)?</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ci.html"><a href="ci.html#travis-ci-linux-and-mac-osx"><i class="fa fa-check"></i><b>2.3.1</b> Travis CI (Linux and Mac OSX)</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ci.html"><a href="ci.html#appveyor-ci-windows"><i class="fa fa-check"></i><b>2.3.2</b> Appveyor CI (Windows)</a></li>
 <li class="chapter" data-level="2.3.3" data-path="ci.html"><a href="ci.html#circle-ci"><i class="fa fa-check"></i><b>2.3.3</b> Circle CI</a></li>
@@ -192,15 +192,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html"><i class="fa fa-check"></i><b>8</b> Onboarding Guide for Editors</a><ul>
 <li class="chapter" data-level="8.1" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#eicchecklist"><i class="fa fa-check"></i><b>8.1</b> EiC Responsibilities</a></li>
-<li class="chapter" data-level="8.2" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#outofscoperesponse"><i class="fa fa-check"></i><b>8.2</b> Responding to out-of-scope submissions</a></li>
-<li class="chapter" data-level="8.3" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#editorchecklist"><i class="fa fa-check"></i><b>8.3</b> Handling Editor’s Checklist</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#upon-submission"><i class="fa fa-check"></i><b>8.3.1</b> Upon submission:</a></li>
-<li class="chapter" data-level="8.3.2" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#assign-reviewers"><i class="fa fa-check"></i><b>8.3.2</b> Assign reviewers:</a></li>
-<li class="chapter" data-level="8.3.3" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#during-review"><i class="fa fa-check"></i><b>8.3.3</b> During review:</a></li>
-<li class="chapter" data-level="8.3.4" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#after-review"><i class="fa fa-check"></i><b>8.3.4</b> After review:</a></li>
-<li class="chapter" data-level="8.3.5" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#for-joint-joss-submissions"><i class="fa fa-check"></i><b>8.3.5</b> For joint JOSS submissions:</a></li>
-<li class="chapter" data-level="8.3.6" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#package-promotion"><i class="fa fa-check"></i><b>8.3.6</b> Package promotion:</a></li>
+<li class="chapter" data-level="8.2" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#editorchecklist"><i class="fa fa-check"></i><b>8.2</b> Handling Editor’s Checklist</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#upon-submission"><i class="fa fa-check"></i><b>8.2.1</b> Upon submission:</a></li>
+<li class="chapter" data-level="8.2.2" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#assign-reviewers"><i class="fa fa-check"></i><b>8.2.2</b> Assign reviewers:</a></li>
+<li class="chapter" data-level="8.2.3" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#during-review"><i class="fa fa-check"></i><b>8.2.3</b> During review:</a></li>
+<li class="chapter" data-level="8.2.4" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#after-review"><i class="fa fa-check"></i><b>8.2.4</b> After review:</a></li>
+<li class="chapter" data-level="8.2.5" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#for-joint-joss-submissions"><i class="fa fa-check"></i><b>8.2.5</b> For joint JOSS submissions:</a></li>
+<li class="chapter" data-level="8.2.6" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#package-promotion"><i class="fa fa-check"></i><b>8.2.6</b> Package promotion:</a></li>
 </ul></li>
+<li class="chapter" data-level="8.3" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#outofscoperesponse"><i class="fa fa-check"></i><b>8.3</b> Responding to out-of-scope submissions</a></li>
 </ul></li>
 <li class="part"><span><b>III Maintaining Packages</b></span></li>
 <li class="chapter" data-level="9" data-path="collaboration.html"><a href="collaboration.html"><i class="fa fa-check"></i><b>9</b> Collaboration Guide</a><ul>
@@ -279,49 +279,33 @@ board. The EiC plays the following roles</p>
 <ul>
 <li>Watch all issues posted to the onboarding repo:</li>
 <li>Assigns packages to other editors, including self, to handle. Mostly this just rotates among editors, unless the EiC thinks an editor is particularly suited to a package, or an editor rejects due to being too busy/conflict of interest.</li>
-<li>Raises scope/overlap issue with all editors if they see an ambiguous case. This
-may also be done by handling editors (see below). To initiate discussion, this
-is posted to the rOpenSci Slack onboarding channel, tagging all editors.</li>
-<li>Responds to pre-submission inquiries and <code>meta</code> issues posted to the onboarding
-repo, similarly pinging channel if discussion needed. But editors should all feel free to chime in on these if they want.</li>
+<li>Raises scope/overlap issue with all editors if they see an ambiguous case. This may also be done by handling editors (see below). To initiate discussion, this is posted to the rOpenSci Slack onboarding channel, tagging all editors.</li>
+<li>Responds to pre-submission inquiries and <code>meta</code> issues posted to the onboarding repo, similarly pinging channel if discussion needed. But editors should all feel free to chime in on these if they want.</li>
+<li>See <a href="onboarding-guide-for-editors.html#outofscoperesponse">this section</a> about how to respond to out-of-scope (pre-) submissions.</li>
 <li>Responds to referrals from JOSS or other publication partners.</li>
-<li>Monitors pace of review process and reminds other editors to move packages
-along as needed.</li>
+<li>Monitors pace of review process and reminds other editors to move packages along as needed.</li>
 </ul>
 </div>
-<div id="outofscoperesponse" class="section level2">
-<h2><span class="header-section-number">8.2</span> Responding to out-of-scope submissions</h2>
-<p>Thank authors for their submission, explain the reasons of the decision, and direct them to other publication venues if relevant, and to rOpenSci discuss forum. Use wording from <a href="policies.html#aims-and-scope">Aims and scope</a> in particular regarding the evolution of scope over time, and the overlap and differences between unconf/staff/onboarding development.</p>
-<p><a href="https://github.com/ropensci/onboarding/issues?q=is%3Aissue+is%3Aclosed+label%3Aout-of-scope">Examples of out-of-scope submissions and responses</a>.</p>
-</div>
 <div id="editorchecklist" class="section level2">
-<h2><span class="header-section-number">8.3</span> Handling Editor’s Checklist</h2>
+<h2><span class="header-section-number">8.2</span> Handling Editor’s Checklist</h2>
 <div id="upon-submission" class="section level3">
-<h3><span class="header-section-number">8.3.1</span> Upon submission:</h3>
+<h3><span class="header-section-number">8.2.1</span> Upon submission:</h3>
 <ul>
-<li>Tag issue appropriately with <code>package</code>, <code>topic:</code>, etc. tags. Add <code>1/editor-checks</code> tag
-and assign a main editor if you haven’t already.</li>
+<li>Tag issue with <code>1/editor-checks</code> tag and assign a main editor if you haven’t already. Please strive to finish the checks and start looking for reviewers within 5 working days.</li>
 <li>Use the <a href="editortemplate.html#editortemplate">editor template</a> to guide initial checks and record your respose to the submission.</li>
 <li>Check that template has been properly filled out</li>
 <li>Check against policies for <a href="policies.html#aims-and-scope">fit</a> and <a href="policies.html#overlap">overlap</a>.
-Initiate discussion via slack #onboarding channel if needed for edge cases.
-If reject, close issue, direct authors to other groups/repos as appropriate.</li>
-<li>Check that mandatory parts of template are complete. If not, close issue,
-direct authors toward appropriate instructions.</li>
-<li>Run run automated tests: <code>devtools::check()</code>, <code>goodpractice::gp()</code> (most exceptions will need to be justified by the author in the particular context of their package.), <code>devtools::spell_check()</code>. Run <code>covr::package_coverage()</code> using <code>NOT_CRAN</code> if needed, as well. Report relevant outputs in the issue thread.
-<ul>
-<li>For packages with compiled code or linking to external libraries or languages,
-check on multiple platforms, using win-builder, r-hub, or other editors
-as needed.</li>
-</ul></li>
+Initiate discussion via slack #onboarding channel if needed for edge cases that haven’t been caught by previous checks by the editor-in-chief.
+If reject, see <a href="onboarding-guide-for-editors.html#outofscoperesponse">this section</a> about how to respond.</li>
+<li>Check that mandatory parts of template are complete. If not, direct authors toward appropriate instructions.</li>
+<li>Run run automated tests: <code>devtools::check()</code>, <code>goodpractice::gp()</code> (most exceptions will need to be justified by the author in the particular context of their package.), <code>devtools::spell_check()</code>. Run <code>covr::package_coverage()</code> using <code>NOT_CRAN</code> if needed, as well. Report relevant outputs in the issue thread.</li>
+<li>For packages needing continuous integration on multiple platforms (cf <a href="ci.html#whichci">criteria in this section of the CI chapter</a>) make sure the package gets tested on multiple platforms (having the package built on both Travis and Appveyor for instance).</li>
 <li>If initial checks show major gaps, request changes before assigning reviewers.</li>
-<li>If the package raises a new issue for rOpenSci policy, open a discussion on the
-<a href="https://discuss.ropensci.org/">rOpenSci forum</a> to discuss it with other
-editors (<a href="">example</a><a href="https://discuss.ropensci.org/t/overlap-policy-for-package-onboarding/368" class="uri">https://discuss.ropensci.org/t/overlap-policy-for-package-onboarding/368</a>)</li>
+<li>If the package raises a new issue for rOpenSci policy, start a conversation in Slack or open a discussion on the <a href="https://discuss.ropensci.org/">rOpenSci forum</a> to discuss it with other editors (<a href="">example</a><a href="https://discuss.ropensci.org/t/overlap-policy-for-package-onboarding/368" class="uri">https://discuss.ropensci.org/t/overlap-policy-for-package-onboarding/368</a>)</li>
 </ul>
 </div>
 <div id="assign-reviewers" class="section level3">
-<h3><span class="header-section-number">8.3.2</span> Assign reviewers:</h3>
+<h3><span class="header-section-number">8.2.2</span> Assign reviewers:</h3>
 <ul>
 <li>Switch numbered tag to <code>2/seeking-reviewers</code></li>
 <li>Ask author to add a rOpenSci review badge to their README. Badge URL is <code>https://badges.ropensci.org/&lt;issue_id&gt;_status.svg</code>. Full link should be:</li>
@@ -331,13 +315,10 @@ editors (<a href="">example</a><a href="https://discuss.ropensci.org/t/overlap-p
 <li>Use the #onboarding slack channel for discussion about potential reviewers.</li>
 <li>Use the <a href="reviewrequesttemplate.html#reviewrequesttemplate">email template</a> if needed for inviting reviewers
 <ul>
-<li>When inviting reviewers, include something like “if I don’t hear from
-you in a week, I’ll assume you are unable to review,” so as to give a
-clear deadline when you’ll move on to looking for someone else.</li>
+<li>When inviting reviewers, include something like “if I don’t hear from you in a week, I’ll assume you are unable to review,” so as to give a clear deadline when you’ll move on to looking for someone else.</li>
 </ul></li>
 <li>Assign a due date 3 weeks after all reviewers have been found.</li>
-<li><p>Once two or more reviewers are found, assign reviewer by tagging in the issue with the
-following format to activate the automated reminders bot:</p>
+<li><p>Once two or more reviewers are found, assign reviewer by tagging in the issue with the following format:</p>
 <p>Reviewer: <span class="citation">(<span class="citeproc-not-found" data-reference-id="githubname1"><strong>???</strong></span>)</span>
 Reviewer: <span class="citation">(<span class="citeproc-not-found" data-reference-id="githubname2"><strong>???</strong></span>)</span>
 Due date: YYYY-MM-DD</p></li>
@@ -346,7 +327,7 @@ Due date: YYYY-MM-DD</p></li>
 </ul>
 </div>
 <div id="during-review" class="section level3">
-<h3><span class="header-section-number">8.3.3</span> During review:</h3>
+<h3><span class="header-section-number">8.2.3</span> During review:</h3>
 <ul>
 <li>Check in with reviewers and authors occasionally. Offer clarification and help as needed.</li>
 <li>In general aim for 3 weeks for review, 2 weeks for
@@ -358,12 +339,11 @@ subsequent changes, and 1 week for reviewer approval of changes.</li>
 </ul>
 </div>
 <div id="after-review" class="section level3">
-<h3><span class="header-section-number">8.3.4</span> After review:</h3>
+<h3><span class="header-section-number">8.2.4</span> After review:</h3>
 <ul>
 <li>Change the status tag to <code>6/approved</code>.</li>
 <li>Add review/er information to the review database.</li>
-<li>If authors intend to submit to CRAN, check against CRAN gotchas and provide
-support through this process.</li>
+<li>If authors intend to submit to CRAN, direct them to the <a href="building.html#crangotchas">section about CRAN gotchas</a> and offer to provide support through this process.</li>
 <li>Ask authors to migrate to <code>ropensci</code>
 <ul>
 <li>Create a two-person team in the ropensci organization, named for the
@@ -390,7 +370,7 @@ sufficient</li>
 </ul>
 </div>
 <div id="for-joint-joss-submissions" class="section level3">
-<h3><span class="header-section-number">8.3.5</span> For joint JOSS submissions:</h3>
+<h3><span class="header-section-number">8.2.5</span> For joint JOSS submissions:</h3>
 <ul>
 <li>After repo is transferred and admin rights assigned, have author generate
 a new release with a DOI.</li>
@@ -401,14 +381,19 @@ add the following comment to the submission thread:</p>
 </ul>
 </div>
 <div id="package-promotion" class="section level3">
-<h3><span class="header-section-number">8.3.6</span> Package promotion:</h3>
+<h3><span class="header-section-number">8.2.6</span> Package promotion:</h3>
 <ul>
 <li>Ask authors to write either a blog post or a tech-notes post for the package, as appropriate, and ping <a href="https://github.com/stefaniebutland">Stefanie Butland</a>, rOpenSci community manager.</li>
 <li>Alert maintainers of appropriate <a href="https://github.com/search?utf8=%E2%9C%93&amp;q=user%3Aropensci+%22task+view%22&amp;type=Repositories&amp;ref=searchresults">task views</a></li>
 <li>Direct the author to the chapters of the guide about <a href="#releases">package releases</a>, <a href="marketing.html#marketing">marketing</a> and <a href="grooming.html#grooming">GitHub grooming</a>.</li>
 </ul>
-
 </div>
+</div>
+<div id="outofscoperesponse" class="section level2">
+<h2><span class="header-section-number">8.3</span> Responding to out-of-scope submissions</h2>
+<p>Thank authors for their submission, explain the reasons of the decision, and direct them to other publication venues if relevant, and to rOpenSci discuss forum. Use wording from <a href="policies.html#aims-and-scope">Aims and scope</a> in particular regarding the evolution of scope over time, and the overlap and differences between unconf/staff/onboarding development.</p>
+<p><a href="https://github.com/ropensci/onboarding/issues?q=is%3Aissue+is%3Aclosed+label%3Aout-of-scope">Examples of out-of-scope submissions and responses</a>.</p>
+
 </div>
 </div>
 

@@ -25,7 +25,7 @@
 <meta name="author" content="rOpenSci onboarding editorial team: Scott Chamberlain, Anna Krystalli, Lincoln Mullen, Karthik Ram, Noam Ross, Maëlle Salmon">
 
 
-<meta name="date" content="2018-06-19">
+<meta name="date" content="2018-06-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -144,13 +144,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="building.html"><a href="building.html#package-dependencies"><i class="fa fa-check"></i><b>1.8</b> Package dependencies</a></li>
 <li class="chapter" data-level="1.9" data-path="building.html"><a href="building.html#recommended-scaffolding"><i class="fa fa-check"></i><b>1.9</b> Recommended scaffolding</a></li>
 <li class="chapter" data-level="1.10" data-path="building.html"><a href="building.html#console-messages"><i class="fa fa-check"></i><b>1.10</b> Console messages</a></li>
-<li class="chapter" data-level="1.11" data-path="building.html"><a href="building.html#miscellaneous-cran-gotchas"><i class="fa fa-check"></i><b>1.11</b> Miscellaneous CRAN gotchas</a></li>
+<li class="chapter" data-level="1.11" data-path="building.html"><a href="building.html#crangotchas"><i class="fa fa-check"></i><b>1.11</b> Miscellaneous CRAN gotchas</a></li>
 <li class="chapter" data-level="1.12" data-path="building.html"><a href="building.html#further-guidance"><i class="fa fa-check"></i><b>1.12</b> Further guidance</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ci.html"><a href="ci.html"><i class="fa fa-check"></i><b>2</b> Continuous Integration Best Practices</a><ul>
 <li class="chapter" data-level="2.1" data-path="ci.html"><a href="ci.html#why-use-continuous-integration"><i class="fa fa-check"></i><b>2.1</b> Why use continuous integration?</a></li>
 <li class="chapter" data-level="2.2" data-path="ci.html"><a href="ci.html#how-to-use-continuous-integration"><i class="fa fa-check"></i><b>2.2</b> How to use continuous integration?</a></li>
-<li class="chapter" data-level="2.3" data-path="ci.html"><a href="ci.html#which-continuous-integration-services"><i class="fa fa-check"></i><b>2.3</b> Which continuous integration service(s)?</a><ul>
+<li class="chapter" data-level="2.3" data-path="ci.html"><a href="ci.html#whichci"><i class="fa fa-check"></i><b>2.3</b> Which continuous integration service(s)?</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ci.html"><a href="ci.html#travis-ci-linux-and-mac-osx"><i class="fa fa-check"></i><b>2.3.1</b> Travis CI (Linux and Mac OSX)</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ci.html"><a href="ci.html#appveyor-ci-windows"><i class="fa fa-check"></i><b>2.3.2</b> Appveyor CI (Windows)</a></li>
 <li class="chapter" data-level="2.3.3" data-path="ci.html"><a href="ci.html#circle-ci"><i class="fa fa-check"></i><b>2.3.3</b> Circle CI</a></li>
@@ -192,15 +192,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html"><i class="fa fa-check"></i><b>8</b> Onboarding Guide for Editors</a><ul>
 <li class="chapter" data-level="8.1" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#eicchecklist"><i class="fa fa-check"></i><b>8.1</b> EiC Responsibilities</a></li>
-<li class="chapter" data-level="8.2" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#outofscoperesponse"><i class="fa fa-check"></i><b>8.2</b> Responding to out-of-scope submissions</a></li>
-<li class="chapter" data-level="8.3" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#editorchecklist"><i class="fa fa-check"></i><b>8.3</b> Handling Editor’s Checklist</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#upon-submission"><i class="fa fa-check"></i><b>8.3.1</b> Upon submission:</a></li>
-<li class="chapter" data-level="8.3.2" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#assign-reviewers"><i class="fa fa-check"></i><b>8.3.2</b> Assign reviewers:</a></li>
-<li class="chapter" data-level="8.3.3" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#during-review"><i class="fa fa-check"></i><b>8.3.3</b> During review:</a></li>
-<li class="chapter" data-level="8.3.4" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#after-review"><i class="fa fa-check"></i><b>8.3.4</b> After review:</a></li>
-<li class="chapter" data-level="8.3.5" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#for-joint-joss-submissions"><i class="fa fa-check"></i><b>8.3.5</b> For joint JOSS submissions:</a></li>
-<li class="chapter" data-level="8.3.6" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#package-promotion"><i class="fa fa-check"></i><b>8.3.6</b> Package promotion:</a></li>
+<li class="chapter" data-level="8.2" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#editorchecklist"><i class="fa fa-check"></i><b>8.2</b> Handling Editor’s Checklist</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#upon-submission"><i class="fa fa-check"></i><b>8.2.1</b> Upon submission:</a></li>
+<li class="chapter" data-level="8.2.2" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#assign-reviewers"><i class="fa fa-check"></i><b>8.2.2</b> Assign reviewers:</a></li>
+<li class="chapter" data-level="8.2.3" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#during-review"><i class="fa fa-check"></i><b>8.2.3</b> During review:</a></li>
+<li class="chapter" data-level="8.2.4" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#after-review"><i class="fa fa-check"></i><b>8.2.4</b> After review:</a></li>
+<li class="chapter" data-level="8.2.5" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#for-joint-joss-submissions"><i class="fa fa-check"></i><b>8.2.5</b> For joint JOSS submissions:</a></li>
+<li class="chapter" data-level="8.2.6" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#package-promotion"><i class="fa fa-check"></i><b>8.2.6</b> Package promotion:</a></li>
 </ul></li>
+<li class="chapter" data-level="8.3" data-path="onboarding-guide-for-editors.html"><a href="onboarding-guide-for-editors.html#outofscoperesponse"><i class="fa fa-check"></i><b>8.3</b> Responding to out-of-scope submissions</a></li>
 </ul></li>
 <li class="part"><span><b>III Maintaining Packages</b></span></li>
 <li class="chapter" data-level="9" data-path="collaboration.html"><a href="collaboration.html"><i class="fa fa-check"></i><b>9</b> Collaboration Guide</a><ul>
@@ -279,7 +279,7 @@ Along with <a href="building.html#building">last chapter</a>, it forms our guide
 <p>The <code>usethis</code> package offers a few functions for continuous integration setup, see <a href="http://usethis.r-lib.org/reference/ci.html">the docs</a>.</p>
 <p>Details will be provided below for different services.</p>
 </div>
-<div id="which-continuous-integration-services" class="section level2">
+<div id="whichci" class="section level2">
 <h2><span class="header-section-number">2.3</span> Which continuous integration service(s)?</h2>
 <p>Different continuous integration services will support builds on different operating system.</p>
 <p>R packages should have CI for all platforms when they contain:</p>
