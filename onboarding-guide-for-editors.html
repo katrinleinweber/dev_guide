@@ -347,13 +347,9 @@ subsequent changes, and 1 week for reviewer approval of changes.</li>
 <li>If authors intend to submit to CRAN, direct them to the <a href="building.html#crangotchas">section about CRAN gotchas</a> and offer to provide support through this process.</li>
 <li>Ask authors to migrate to <code>ropensci</code>
 <ul>
-<li>Create a two-person team in the ropensci organization, named for the
-package, with yourself and the package author as members.</li>
+<li>Create a two-person team in the ropensci organization, named for the package, with yourself and the package author as members.</li>
 <li>Have the author transfer the repository to <code>ropensci</code></li>
-<li>Go to the repository settings in the <code>ropensci</code> organization and give
-the two-person team “Write” access to the repository. (“Admin” access
-may be temporarily granted for purposes such as creating Zenodo releases,
-setting up package documentation options, etc.)</li>
+<li>Go to the repository settings in the <code>ropensci</code> organization and give the author “Admin” access to the repository.</li>
 </ul></li>
 <li>Ask author to:
 <ul>
@@ -361,8 +357,7 @@ setting up package documentation options, etc.)</li>
 <li>Change any needed links, such those for CI badges</li>
 <li>Re-activate CI services
 <ul>
-<li>For Travis, activating the project in the ropensci account should be
-sufficient</li>
+<li>For Travis, activating the project in the ropensci account should be sufficient</li>
 <li>For Appveyor, tell the author to update the GitHub link in their badge, but do not transfer the project: Appveyor projects should remain under the authors’ account. The badge is <code>[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/pkgname?branch=master&amp;svg=true)](https://ci.appveyor.com/project/individualaccount/pkgname)</code>.</li>
 <li>For CodeCov, the webhook may need to be reset by the author.</li>
 </ul></li>
