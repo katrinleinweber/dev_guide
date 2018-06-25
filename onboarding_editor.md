@@ -78,7 +78,8 @@ board. The EiC plays the following roles
     -   Have the author transfer the repository to `ropensci`
     -   Go to the repository settings in the `ropensci` organization and give the author "Admin" access to the repository. 
 -   Ask author to:
-    -   Add rOpenSci footer to README
+    -   Add rOpenSci footer to README `[![ropensci_footer](https://ropensci.org/public_images/ropensci_footer.png)](https://ropensci.org)`
+    -   Add a CodeMeta file by running `codemetar::write_codemeta()` ([`codemetar` GitHub repo](https://github.com/ropensci/codemetar))
     -   Change any needed links, such those for CI badges
     -   Re-activate CI services
         -  For Travis, activating the project in the ropensci account should be sufficient
