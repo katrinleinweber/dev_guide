@@ -141,14 +141,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2" data-path="building.html"><a href="building.html#functionvariable-naming-general-syntax"><i class="fa fa-check"></i><b>1.2</b> Function/variable naming &amp; general syntax</a></li>
 <li class="chapter" data-level="1.3" data-path="building.html"><a href="building.html#readme"><i class="fa fa-check"></i><b>1.3</b> README</a></li>
 <li class="chapter" data-level="1.4" data-path="building.html"><a href="building.html#documentation"><i class="fa fa-check"></i><b>1.4</b> Documentation</a></li>
-<li class="chapter" data-level="1.5" data-path="building.html"><a href="building.html#authorship"><i class="fa fa-check"></i><b>1.5</b> Authorship</a></li>
-<li class="chapter" data-level="1.6" data-path="building.html"><a href="building.html#testing"><i class="fa fa-check"></i><b>1.6</b> Testing</a></li>
-<li class="chapter" data-level="1.7" data-path="building.html"><a href="building.html#examples"><i class="fa fa-check"></i><b>1.7</b> Examples</a></li>
-<li class="chapter" data-level="1.8" data-path="building.html"><a href="building.html#package-dependencies"><i class="fa fa-check"></i><b>1.8</b> Package dependencies</a></li>
-<li class="chapter" data-level="1.9" data-path="building.html"><a href="building.html#recommended-scaffolding"><i class="fa fa-check"></i><b>1.9</b> Recommended scaffolding</a></li>
-<li class="chapter" data-level="1.10" data-path="building.html"><a href="building.html#console-messages"><i class="fa fa-check"></i><b>1.10</b> Console messages</a></li>
-<li class="chapter" data-level="1.11" data-path="building.html"><a href="building.html#crangotchas"><i class="fa fa-check"></i><b>1.11</b> Miscellaneous CRAN gotchas</a></li>
-<li class="chapter" data-level="1.12" data-path="building.html"><a href="building.html#further-guidance"><i class="fa fa-check"></i><b>1.12</b> Further guidance</a></li>
+<li class="chapter" data-level="1.5" data-path="building.html"><a href="building.html#website"><i class="fa fa-check"></i><b>1.5</b> Documentation website</a></li>
+<li class="chapter" data-level="1.6" data-path="building.html"><a href="building.html#authorship"><i class="fa fa-check"></i><b>1.6</b> Authorship</a></li>
+<li class="chapter" data-level="1.7" data-path="building.html"><a href="building.html#testing"><i class="fa fa-check"></i><b>1.7</b> Testing</a></li>
+<li class="chapter" data-level="1.8" data-path="building.html"><a href="building.html#examples"><i class="fa fa-check"></i><b>1.8</b> Examples</a></li>
+<li class="chapter" data-level="1.9" data-path="building.html"><a href="building.html#package-dependencies"><i class="fa fa-check"></i><b>1.9</b> Package dependencies</a></li>
+<li class="chapter" data-level="1.10" data-path="building.html"><a href="building.html#recommended-scaffolding"><i class="fa fa-check"></i><b>1.10</b> Recommended scaffolding</a></li>
+<li class="chapter" data-level="1.11" data-path="building.html"><a href="building.html#console-messages"><i class="fa fa-check"></i><b>1.11</b> Console messages</a></li>
+<li class="chapter" data-level="1.12" data-path="building.html"><a href="building.html#crangotchas"><i class="fa fa-check"></i><b>1.12</b> Miscellaneous CRAN gotchas</a></li>
+<li class="chapter" data-level="1.13" data-path="building.html"><a href="building.html#further-guidance"><i class="fa fa-check"></i><b>1.13</b> Further guidance</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ci.html"><a href="ci.html"><i class="fa fa-check"></i><b>2</b> Continuous Integration Best Practices</a><ul>
 <li class="chapter" data-level="2.1" data-path="ci.html"><a href="ci.html#why-use-continuous-integration"><i class="fa fa-check"></i><b>2.1</b> Why use continuous integration?</a></li>
@@ -160,6 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="ci.html"><a href="ci.html#test-coverage"><i class="fa fa-check"></i><b>2.4</b> Test coverage</a></li>
 <li class="chapter" data-level="2.5" data-path="ci.html"><a href="ci.html#even-more-ci-opencpu"><i class="fa fa-check"></i><b>2.5</b> Even more CI: OpenCPU</a></li>
+<li class="chapter" data-level="2.6" data-path="ci.html"><a href="ci.html#make-more-of-your-ci-builds-tic"><i class="fa fa-check"></i><b>2.6</b> Make more of your CI builds: tic</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="package-development-security-best-practices.html"><a href="package-development-security-best-practices.html"><i class="fa fa-check"></i><b>3</b> Package Development Security Best Practices</a><ul>
 <li class="chapter" data-level="3.1" data-path="package-development-security-best-practices.html"><a href="package-development-security-best-practices.html#misc"><i class="fa fa-check"></i><b>3.1</b> Misc</a></li>
@@ -322,6 +324,10 @@ as <code>usethis::use_coverage()</code>.</p>
 <div id="even-more-ci-opencpu" class="section level2">
 <h2><span class="header-section-number">2.5</span> Even more CI: OpenCPU</h2>
 <p>After transfer to the ropensci organization, each push to the repo will be built on OpenCPU and the person committing will receive a notification email. This allows an additional CI service for package authors that that allows for R functions in packages to be called remotely via <a href="https://ropensci.ocpu.io/" class="uri">https://ropensci.ocpu.io/</a> using the <a href="https://www.opencpu.org/api.html#api-json">opencpu api</a>. For more details about this service consult the OpenCPU <a href="https://www.opencpu.org/help.html">help page</a> that also indicates where to ask questions.</p>
+</div>
+<div id="make-more-of-your-ci-builds-tic" class="section level2">
+<h2><span class="header-section-number">2.6</span> Make more of your CI builds: tic</h2>
+<p>The <a href="https://github.com/ropenscilabs/tic"><code>tic</code> package</a> facilitates deployment tasks for R packages tested by Travis CI, AppVeyor, or the CI tool of your choice, cf e.g. our <a href="building.html#website">suggestion to build and deploy the documentation website of your package via Travis</a>.</p>
 
 </div>
 </div>
