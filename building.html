@@ -314,15 +314,18 @@ We strongly recommend that package developers read Hadley Wickham’s concise bu
 <div id="readme" class="section level2">
 <h2><span class="header-section-number">1.3</span> README</h2>
 <ul>
-<li>All packages should have a README file, named <code>README.md</code>, in the root of the repository. The README should include, from top to bottom (see <a href="https://github.com/karthik/badge-test/">this example</a>):</li>
+<li><p>All packages should have a README file, named <code>README.md</code>, in the root of the repository. The README should include, from top to bottom:</p>
+<ul>
+<li>The package name</li>
+<li>Badges for continuous integration and test coverage, the badge for rOpenSci peer-review once it has started (see below), a repostatus.org badge, and any other badges</li>
+<li>Short description of goals of package, with descriptive links to all vignettes (renderred, i.e. readable, cf <a href="building.html#website">the documentation website section</a>) unless the package is small and there’s only one vignette repeating the README.</li>
+<li>Installation instructions</li>
+<li>Any additional setup required (authentication tokens, etc)</li>
+<li>Brief demonstration usage</li>
+<li>If applicable, how the package compares to other similar packages and/or how it relates to other packages</li>
+<li>Citation information</li>
+</ul></li>
 </ul>
-<pre><code>* The package name
-* Badges for continuous integration and test coverage, the badge for rOpenSci peer-review once it has started (see below), a repostatus.org badge, and any other badges
-* Short description of the package
-* Installation instructions
-* Brief demonstration usage
-* If applicable, how the package compares to other similar packages and/or how it relates to other packages
-* Citation information</code></pre>
 <p>If you use another repo status badge such as a <a href="https://www.tidyverse.org/lifecycle/">lifecycle</a> badge, please also add a <a href="http://www.repostatus.org/">repostatus.org</a> badge. <a href="https://github.com/ropensci/ijtiff#ijtiff-">Example of a repo README with two repo status badges</a>.</p>
 <ul>
 <li>Once you have submitted a package and it has passed editor checks, add a peer-review badge via</li>
@@ -350,7 +353,7 @@ can be found at <em>link</em>.</p></li>
 <pre><code>[![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)</code></pre>
 <ul>
 <li><p>Add a code of conduct and contribution guidelines, cf <a href="collaboration.html#friendlyfiles">this section of the book</a>.</p></li>
-<li><p>See the <a href="https://github.com/ropensci/gistr#gistr">gistr README</a> for a good example README to follow.</p></li>
+<li><p>See the <a href="https://github.com/ropensci/gistr#gistr"><code>gistr</code> README</a> for a good example README to follow for a small package, and <a href="https://github.com/ropensci/bowerbird"><code>bowerbird</code> README</a> for a good example README for a larger package.</p></li>
 </ul>
 </div>
 <div id="documentation" class="section level2">
@@ -359,8 +362,13 @@ can be found at <em>link</em>.</p></li>
 <li><p>All exported package functions should be fully documented with examples.</p></li>
 <li><p>All functions should document the type of object returned under the <code>@return</code> heading.</p></li>
 <li><p>The package should contain top-level documentation for <code>?foobar</code>, (or <code>?foobar-package</code> if there is a naming conflict). Optionally, you can use both <code>?foobar</code> and <code>?foobar-package</code> for the package level manual file, using <code>@aliases</code> roxygen tag. <code>usethis::use_package_doc()</code> adds the template for the top-level documentation.</p></li>
-<li><p>The package should contain at least one vignette providing an introduction to the primary package functions and use cases.</p></li>
-<li><p>As is the case for a README, top-level documentation or vignettes may be the first point of entry for users. If your package connects to a data source or online service, or wraps other software, it should provide enough information for users to understand the nature of the data, service, or software, and provide links to other relevant data and documentation. For instance, a the vignette intro or documentation should not merely read, “Provides access to GooberDB,” but also include, &quot;…, an online repository of Goober sightings in South America. More information about GooberDB, and documentation of database structure and metadata can be found at <em>link</em>.</p></li>
+<li><p>The package should contain at least one vignette providing a substantial coverage of package functions, illustrating realistic use cases and how functions are intended to interact. If the package is small, the vignette and the README can have the same content.</p></li>
+<li><p>As is the case for a README, top-level documentation or vignettes may be the first point of entry for users. If your package connects to a data source or online service, or wraps other software, it should provide enough information for users to understand the nature of the data, service, or software, and provide links to other relevant data and documentation. For instance, a the vignette intro or documentation should not merely read, “Provides access to GooberDB,” but also include, &quot;…, an online repository of Goober sightings in South America. More information about GooberDB, and documentation of database structure and metadata can be found at <em>link</em>. Any vignette should outline prerequisite knowledge to be able to understand vignette up front.</p></li>
+</ul>
+<p>The general vignette should present a series of examples progressing in complexity from basic to advanced usage.</p>
+<ul>
+<li><p>Functionality likely to be used by only more advanced users or developers might be better put in a separate vignette (i.e. programming/NSE with dplyr).</p></li>
+<li><p>The vignette(s) should include citations to software and papers where appropriate.</p></li>
 <li><p>We request all submissions to use <code>roxygen2</code> for documentation. <code>roxygen2</code> is <a href="http://cran.r-project.org/web/packages/roxygen2/index.html">an R package</a> that automatically compiles <code>.Rd</code> files to your <code>man</code> folder in your package from simple tags written above each function.</p></li>
 <li><p>More information on using roxygen2 <a href="http://r-pkgs.had.co.nz/man.html">documentation</a> is available in the R packages book.</p></li>
 <li><p>One key advantage of using <code>roxygen2</code> is that your <code>NAMESPACE</code> will always be automatically generated and up to date.</p></li>
@@ -371,8 +379,9 @@ can be found at <em>link</em>.</p></li>
 </div>
 <div id="website" class="section level2">
 <h2><span class="header-section-number">1.5</span> Documentation website</h2>
-<p>We recommend creating a documentation website for your package using <a href="https://github.com/hadley/pkgdown"><code>pkgdown</code></a>. <a href="http://enpiar.com/2017/11/21/getting-down-with-pkgdown/">Here</a> is a good tutorial to get started with <code>pkgdown</code>.</p>
-<p>You could use the <a href="https://github.com/ropenscilabs/tic"><code>tic</code> package</a> for automatic deployment of the package’s website, see <a href="https://github.com/krlmlr/tic.package">this example repo</a>. This would save you the hassle of running (and remembering to run) <code>pkgdown::build_site()</code> yourself every time the site needs to be updated. First refer to our <a href="ci.html#ci">chapter on continuous integration</a> if you’re not familiar with continuous integration/Travis.</p>
+<p>We recommend creating a documentation website for your package using <a href="https://github.com/hadley/pkgdown"><code>pkgdown</code></a>. <a href="http://enpiar.com/2017/11/21/getting-down-with-pkgdown/">Here</a> is a good tutorial to get started with <code>pkgdown</code>.
+When your package has many functions, use grouping in the reference: see the example of <a href="https://ropensci.github.io/drake/reference/index.html"><code>drake</code> website</a> and <a href="https://github.com/ropensci/drake/blob/master/_pkgdown.yml">associated config file</a>.
+You could use the <a href="https://github.com/ropenscilabs/tic"><code>tic</code> package</a> for automatic deployment of the package’s website, see <a href="https://github.com/krlmlr/tic.package">this example repo</a>. This would save you the hassle of running (and remembering to run) <code>pkgdown::build_site()</code> yourself every time the site needs to be updated. First refer to our <a href="ci.html#ci">chapter on continuous integration</a> if you’re not familiar with continuous integration/Travis.</p>
 </div>
 <div id="authorship" class="section level2">
 <h2><span class="header-section-number">1.6</span> Authorship</h2>
