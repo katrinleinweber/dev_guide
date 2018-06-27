@@ -134,7 +134,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Building Your Package</b></span></li>
 <li class="chapter" data-level="1" data-path="building.html"><a href="building.html"><i class="fa fa-check"></i><b>1</b> Packaging Guide</a><ul>
-<li class="chapter" data-level="1.1" data-path="building.html"><a href="building.html#package-naming"><i class="fa fa-check"></i><b>1.1</b> Package naming</a></li>
+<li class="chapter" data-level="1.1" data-path="building.html"><a href="building.html#package-name-and-metadata"><i class="fa fa-check"></i><b>1.1</b> Package name and metadata</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="building.html"><a href="building.html#naming-your-package"><i class="fa fa-check"></i><b>1.1.1</b> Naming your package</a></li>
+<li class="chapter" data-level="1.1.2" data-path="building.html"><a href="building.html#creating-metadata-for-your-package"><i class="fa fa-check"></i><b>1.1.2</b> Creating metadata for your package</a></li>
+</ul></li>
 <li class="chapter" data-level="1.2" data-path="building.html"><a href="building.html#functionvariable-naming-general-syntax"><i class="fa fa-check"></i><b>1.2</b> Function/variable naming &amp; general syntax</a></li>
 <li class="chapter" data-level="1.3" data-path="building.html"><a href="building.html#readme"><i class="fa fa-check"></i><b>1.3</b> README</a></li>
 <li class="chapter" data-level="1.4" data-path="building.html"><a href="building.html#documentation"><i class="fa fa-check"></i><b>1.4</b> Documentation</a></li>
@@ -274,11 +277,20 @@ rOpenSci accepts packages that meet our guidelines via a streamlined <a href="ht
 We strongly recommend that package developers read Hadley Wickham’s concise but thorough book on package development which is available for <a href="http://r-pkgs.had.co.nz/">free online</a> (and <a href="http://amzn.com/1491910593?tag=r-pkgs-20">print</a>).
 </p>
 </div>
-<div id="package-naming" class="section level2">
-<h2><span class="header-section-number">1.1</span> Package naming</h2>
+<div id="package-name-and-metadata" class="section level2">
+<h2><span class="header-section-number">1.1</span> Package name and metadata</h2>
+<div id="naming-your-package" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Naming your package</h3>
 <ul>
-<li>We strongly recommend short, descriptive names in lower case. If your package deals with one or more commercial services, please make sure the name does not violate branding guidelines. You can check if your package name is available, informative and not offensive by using the <a href="https://github.com/ropenscilabs/available"><code>available</code> package</a>.</li>
+<li><p>We strongly recommend short, descriptive names in lower case. If your package deals with one or more commercial services, please make sure the name does not violate branding guidelines. You can check if your package name is available, informative and not offensive by using the <a href="https://github.com/ropenscilabs/available"><code>available</code> package</a>.</p></li>
+<li><p>A more unique package name might be easier to track (for you and us to assess package use) and search (for users to find it and to google their questions). Obviously a <em>too</em> unique package name might make the package less discoverable (e.g. it might be an argument for naming your package <a href="https://github.com/ropensci/geojson">geojson</a>).</p></li>
+<li><p>Find other interesting aspects of naming your package <a href="http://www.njtierney.com/post/2018/06/20/naming-things/">in this blog post by Nick Tierney</a>, and in case you change your mind, find out <a href="http://www.njtierney.com/post/2017/10/27/change-pkg-name/">how to rename your package in this other blog post of Nick’s</a>.</p></li>
 </ul>
+</div>
+<div id="creating-metadata-for-your-package" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Creating metadata for your package</h3>
+<p>We recommend you to use the <a href="https://github.com/ropensci/codemetar"><code>codemetar</code> package</a> for creating and updating a JSON <a href="https://codemeta.github.io/">CodeMeta</a> metadata file for your package via <code>codemetar::write_codemeta()</code>. It will automatically include all useful information, including <a href="grooming.html#grooming">GitHub rep keywords</a>. CodeMeta uses <a href="https://schema.org/">Schema.org terms</a> so as it gains popularity the JSON metadata of your package might be used by third-party services, maybe even search engines.</p>
+</div>
 </div>
 <div id="functionvariable-naming-general-syntax" class="section level2">
 <h2><span class="header-section-number">1.2</span> Function/variable naming &amp; general syntax</h2>
