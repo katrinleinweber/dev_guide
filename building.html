@@ -159,7 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.2" data-path="ci.html"><a href="ci.html#appveyor-ci-windows"><i class="fa fa-check"></i><b>2.3.2</b> Appveyor CI (Windows)</a></li>
 <li class="chapter" data-level="2.3.3" data-path="ci.html"><a href="ci.html#circle-ci"><i class="fa fa-check"></i><b>2.3.3</b> Circle CI</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="ci.html"><a href="ci.html#test-coverage"><i class="fa fa-check"></i><b>2.4</b> Test coverage</a></li>
+<li class="chapter" data-level="2.4" data-path="ci.html"><a href="ci.html#coverage"><i class="fa fa-check"></i><b>2.4</b> Test coverage</a></li>
 <li class="chapter" data-level="2.5" data-path="ci.html"><a href="ci.html#even-more-ci-opencpu"><i class="fa fa-check"></i><b>2.5</b> Even more CI: OpenCPU</a></li>
 <li class="chapter" data-level="2.6" data-path="ci.html"><a href="ci.html#make-more-of-your-ci-builds-tic"><i class="fa fa-check"></i><b>2.6</b> Make more of your CI builds: tic</a></li>
 </ul></li>
@@ -379,8 +379,9 @@ can be found at <em>link</em>.</p></li>
 <h2><span class="header-section-number">1.7</span> Testing</h2>
 <ul>
 <li><p>All packages should pass <code>R CMD check</code>/<code>devtools::check()</code> on all major platforms.</p></li>
-<li><p>All packages should have a test suite that covers major functionality of the package.</p></li>
+<li><p>All packages should have a test suite that covers major functionality of the package. The tests should also cover the behavior of the package in case of errors.</p></li>
 <li><p>We recommend using <code>testthat</code> for writing tests. Strive to write tests as you write each new function. This serves the obvious need to have proper testing for the package, but allows you to think about various ways in which a function can fail, and to <em>defensively</em> code against those. <a href="http://r-pkgs.had.co.nz/tests.html">More information</a>.</p></li>
+<li><p>Once you’ve set up CI, use your package’s code coverage report (cf <a href="ci.html#coverage">this section of our book</a>) to identify untested lines, and to add further tests.</p></li>
 <li><p><code>testthat</code> has a function <code>skip_on_cran()</code> that you can use to not run tests on CRAN. We recommend using this on all functions that are API calls since they are quite likely to fail on CRAN. These tests will still run on Travis.</p></li>
 <li><p>Even if you use <a href="ci.html#ci">continuous integration</a>, we recommend that you run tests locally prior to submitting your package, as some tests are often skipped. (You may need to set <code>Sys.setenv(NOT_CRAN=&quot;true&quot;)</code> in order to ensure all tests are run.) In addition, we recommend that prior to submitting your package, you use MangTheCat’s <a href="https://github.com/MangoTheCat/goodpractice/"><strong>goodpractice</strong></a> package to check your package for likely sources of errors, and run <code>devtools::spell_check()</code> to find spelling errors in documentation.</p></li>
 </ul>
