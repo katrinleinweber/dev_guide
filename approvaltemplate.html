@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="collaboration.html">
-<link rel="next" href="marketing.html">
+<link rel="prev" href="reviewrequesttemplate.html">
+<link rel="next" href="newstemplate.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -271,56 +271,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="releasing" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Releasing a package</h1>
-<div class="summaryblock">
-<p>
-Your package should have different versions over time: snapshots of a state of the package that you can release to CRAN for instance. These versions should be properly <em>numbered</em>, <em>released</em> and <em>described in a NEWS file</em>. More details below.
-</p>
-<p>
-Note that you could streamline the process of updating NEWS and versioning your package by using <a href="https://github.com/krlmlr/fledge">the <code>fledge</code> package</a>.
-</p>
-</div>
-<div id="versioning" class="section level2">
-<h2><span class="header-section-number">10.1</span> Versioning</h2>
-<ul>
-<li>We strongly recommend that rOpenSci packages use semantic versioning. A detailed explanation is available on the <a href="http://r-pkgs.had.co.nz/description.html#version">description chapter</a>.</li>
-</ul>
-</div>
-<div id="releasing-1" class="section level2">
-<h2><span class="header-section-number">10.2</span> Releasing</h2>
-<ul>
-<li>Git tag each release after every submission to CRAN. [more info](<a href="https://help.github.com/articles/creating-releases/" class="uri">https://help.github.com/articles/creating-releases/</a>]</li>
-</ul>
-</div>
-<div id="news" class="section level2">
-<h2><span class="header-section-number">10.3</span> News file</h2>
-<p>A NEWS file describing changes associated with each version makes it easier for users to see what’s changing in the package and how it might impact their workflow. You must add one for your package, and make it easy to read.</p>
-<ul>
-<li>It is mandatory to use a <code>NEWS</code> or <code>NEWS.md</code> file in the root of your package. We recommend using <code>NEWS.md</code> to make the file <a href="http://happygitwithr.com/repo-browsability.html">more browsable</a>.</li>
-<li>Please use our example<a href="newstemplate.html#newstemplate">NEWS file</a> as a model. You can find a good NEWS file in the wild <a href="https://github.com/ropensci/taxize/blob/master/NEWS.md">in the <code>taxize</code> package repo</a> for instance.</li>
-<li>If you use <code>NEWS</code>, add it to <code>.Rbuildignore</code>, but not if you use <code>NEWS.md</code></li>
-<li>Update the news file before every CRAN release, with a section with the package name, version and date of release, like (as seen in our example<a href="newstemplate.html#newstemplate">NEWS file</a>:</li>
-</ul>
-<pre><code>foobar 0.2.0 (2016-04-01)
-=========================</code></pre>
-<ul>
-<li>Under that header, put in sections as needed, including: <code>NEW FEATURES</code>, <code>MINOR IMPROVEMENTS</code>, <code>BUG FIXES</code>, <code>DEPRECATED AND DEFUNCT</code>, <code>DOCUMENTATION FIXES</code> and any special heading grouping a large number of changes. Under each header list items as needed (as seen in our example<a href="newstemplate.html#newstemplate">NEWS file</a>. For each item give
-a description of the new feature, improvement, bug fix, or deprecated function/feature. Link
-to any related GitHub issue like <code>(#12)</code>. The <code>(#12)</code> will resolve on GitHub in Releases to a link to that issue in the repo.</li>
-<li>After you have added a <code>git tag</code> and pushed up to GitHub, add the news items for that tagged version to the Release notes of a release in your GitHub repo with a title like <code>pkgname v0.1.0</code>. See <a href="https://help.github.com/articles/creating-releases/">GitHub docs about creating a release</a>.</li>
-<li>New CRAN releases will be tweeted about automatically by <a href="https://twitter.com/roknowtifier">roknowtifier</a> and written about <a href="https://ropensci.github.io/biweekly/">in our biweekly newsletter</a> but see <a href="marketing.html#marketing">next chapter about marketing</a> about how to inform more potential users about the release.</li>
-</ul>
+<div id="approvaltemplate" class="section level1">
+<h1><span class="header-section-number">D</span> Approval comment template</h1>
+<pre><code>Approved! Thanks &lt;author(s) GitHub username(s)&gt; for submitting and &lt;reviewers&#39; GithHub usernames&gt; for your reviews! &lt;optional: smiling cat emoji à la Scott&gt;
 
-</div>
+To-dos:
+- [ ] Transfer the repo to the rOpenSci organization under &quot;Settings&quot; in your repo.  I have invited you to a team that should allow you to do so.  You&#39;ll be made admin once you do.
+- [ ] Add the rOpenSci footer to the bottom of your README
+&quot;```
+[![ropensci_footer](https://ropensci.org/public_images/ropensci_footer.png)](https://ropensci.org)```&quot;
+- [ ] Fix any links in badges for CI and coverage to point to the ropensci URL. We no longer transfer Appveyor projects to ropensci Appveyor account so after transfer of your repo to the ropensci GitHub organization the badge should be `[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/pkgname?branch=master&amp;svg=true)](https://ci.appveyor.com/project/individualaccount/pkgname)`.
+- [ ] We&#39;re starting to roll out software metadata files to all ropensci packages via the Codemeta initiative, see https://github.com/ropensci/codemetar/#codemetar for how to include it in your package, after installing the package - should be easy as running codemetar::write_codemeta() in the root of your package. 
+&lt;IF JOSS&gt;
+- [ ] Activate Zenodo watching the repo
+- [ ] Tag and create a release so as to create a Zenodo version and DOI
+- [ ] Submit to JOSS using the Zenodo DOI.  We will tag it for expedited review.
+&lt;IF JOSS/&gt;
+
+Welcome aboard! We&#39;d also love a blog post about your package, either a short-form intro to it (https://ropensci.org/tech-notes/) or long-form post with more narrative about its development. ((https://ropensci.org/blog/). If you are, @stefaniebutland will be in touch about content and timing.
+
+We&#39;ve started putting together a gitbook with our best practice and tips, [this chapter](https://ropensci.github.io/dev_guide/collaboration.html) starts the 3d section that&#39;s about guidance for after onboarding. Please tell us what could be improved, the corresponding repo is [here](https://github.com/ropensci/dev_guide).</code></pre>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="collaboration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="marketing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="reviewrequesttemplate.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="newstemplate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
