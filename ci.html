@@ -303,12 +303,23 @@ Along with <a href="building.html#building">last chapter</a>, it forms our guide
 </ul>
 <div id="travis-ci-linux-and-mac-osx" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Travis CI (Linux and Mac OSX)</h3>
-<p>Travis offers continuous integration for Linux and Mac OSX.</p>
+<p>Travis offers continuous integration for Linux and Mac OSX. Set it up using <code>usethis::use_travis()</code>.</p>
 <p>R is now a <a href="http://blog.travis-ci.com/2015-02-26-test-your-r-applications-on-travis-ci/">natively supported language on Travis-CI</a>, making it easier than ever to do continuous integration. See <a href="http://marker.to/NEr8Bd">R Packages</a> and Julia Silge’s <a href="http://juliasilge.com/blog/Beginners-Guide-to-Travis/">Beginner’s Guide to Travis-CI for R</a> for more help.</p>
+<p>Please use these tips to minimize build time on Travis especially after your package project gets transferred to ropensci Travis account:</p>
+<ul>
+<li><p>Cache installation of packages. Add <code>cache: packages</code> at the beginning of the config file. <a href="https://github.com/ropensci/crul/blob/ee31c0128fd3279165360ef5ee2a1775ab00c82f/.travis.yml#L3">Example in the wild</a>. It’ll already be in the config file if you set Travis up using <code>usethis::use_travis()</code>.</p></li>
+<li><p><a href="https://blog.travis-ci.com/2017-03-22-introducing-auto-cancellation">Enable auto-cancellation of builds</a>.</p></li>
+</ul>
 </div>
 <div id="appveyor-ci-windows" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> Appveyor CI (Windows)</h3>
-<p>For continuous integration on Windows, see <a href="https://github.com/krlmlr/r-appveyor">R + Appveyor</a>.</p>
+<p>For continuous integration on Windows, see <a href="https://github.com/krlmlr/r-appveyor">R + Appveyor</a>. Set it up using <code>usethis::use_appveyor()</code>.</p>
+<p>Here are tips to minimize Appveyor build time:</p>
+<ul>
+<li><p>Cache installation of packages. <a href="https://github.com/r-lib/usethis/blob/2c52c06373849d52f78a26c5a0e080f518a2f825/inst/templates/appveyor.yml#L13">Example in a config file</a>. It’ll already be in the config file if you set Appveyor CI up using <code>usethis::use_appveyor()</code>.</p></li>
+<li><p>Enable <a href="https://www.appveyor.com/docs/build-configuration/#rolling-builds">rolling builds</a>.</p></li>
+</ul>
+<p>We no longer transfer Appveyor projects to ropensci Appveyor account so after transfer of your repo to the ropensci GitHub organization the badge will be <code>[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/pkgname?branch=master&amp;svg=true)](https://ci.appveyor.com/project/individualaccount/pkgname)</code>.</p>
 </div>
 <div id="circle-ci" class="section level3">
 <h3><span class="header-section-number">2.3.3</span> Circle CI</h3>
@@ -327,7 +338,7 @@ as <code>usethis::use_coverage()</code>.</p>
 </div>
 <div id="make-more-of-your-ci-builds-tic" class="section level2">
 <h2><span class="header-section-number">2.6</span> Make more of your CI builds: tic</h2>
-<p>The <a href="https://github.com/ropenscilabs/tic"><code>tic</code> package</a> facilitates deployment tasks for R packages tested by Travis CI, AppVeyor, or the CI tool of your choice, cf e.g. our <a href="building.html#website">suggestion to build and deploy the documentation website of your package via Travis</a>.</p>
+<p>The <a href="https://github.com/ropenscilabs/tic"><code>tic</code> package</a> facilitates deployment tasks for R packages tested by Travis CI, AppVeyor, or the CI tool of your choice, cf e.g. our <a href="building.html#website">suggestion to build and deploy the documentation website of your package via Travis</a>. Actually this book <a href="https://github.com/ropensci/dev_guide#technical-details">uses <code>tic</code> for deployment</a>.</p>
 
 </div>
 </div>
