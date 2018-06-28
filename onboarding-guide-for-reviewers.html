@@ -314,7 +314,7 @@ Please strive to complete your review within 3 weeks of accepting a review reque
 <li>Running <code>devtools::check()</code> and <code>devtools::test()</code> on the package to find any errors that may be missed on the author’s system.</li>
 <li>Using the <strong>covr</strong> package to examine the extent of test coverage.</li>
 <li>Using the <a href="https://github.com/MangoTheCat/goodpractice"><strong>goodpractice</strong></a> package (<code>goodpractice::gp()</code>) to identify likely sources of errors and style issues. Most exceptions will need to be justified by the author in the particular context of their package.</li>
-<li>Using <code>devtools::spell_check()</code> to find spelling errors in DESCRIPTION and manual files, and RStudio’s spellchecker to find spelling errors in vignettes and README files.</li>
+<li>Using <code>spelling::spell_check_package()</code> (and <code>spelling::spell_check_files(&quot;README.Rmd&quot;)</code>) to find spelling errors.</li>
 </ul>
 </div>
 <div id="experience-from-past-reviewers" class="section level3">
