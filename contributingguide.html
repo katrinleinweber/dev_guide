@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="onboarding-guide-for-reviewers.html">
-<link rel="next" href="collaboration.html">
+<link rel="prev" href="evolution.html">
+<link rel="next" href="reviewtemplate.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -279,138 +279,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="onboarding-guide-for-editors" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Onboarding Guide for Editors</h1>
-<div class="summaryblock">
-<p>
-Onboarding at rOpenSci is managed by a team of editors. We are piloting a system of a rotating Editor-in-Chief (EiC).
-</p>
-<p>
-This chapter presents the responsabilities <a href="onboarding-guide-for-editors.html#eicchecklist">of the Editor-in-Chief</a>, of <a href="onboarding-guide-for-editors.html#editorchecklist">any editor in charge of a submission</a>, and <a href="onboarding-guide-for-editors.html#outofscoperesponse">how to respond to an out-of-scope submission</a>.
-</p>
-<p>
-If you’re a guest editor, thanks for helping! Please contact the editor who invited you to handle a submission for any question you might have.
-</p>
-</div>
-<div id="eicchecklist" class="section level2">
-<h2><span class="header-section-number">8.1</span> EiC Responsibilities</h2>
-<p>The EiC serves for 3 months or a time agreed to by all members of the editorial
-board. The EiC plays the following roles</p>
+<div id="contributingguide" class="section level1">
+<h1><span class="header-section-number">Chapter 14</span> Contributing Guide</h1>
+<p>So you want to contribute to rOpenSci packages? Fantastic! First of all, maybe contributing to a package is not the (only) way you’ll want to get involved with rOpenSci. Check out our <a href="https://ropensci.org/community/">community page</a> to find out all the ways to participate in the project.</p>
+<div id="pre-requisities" class="section level2">
+<h2><span class="header-section-number">14.1</span> Pre-requisities</h2>
+<p>Before contributing to one of our packages, you might want to read a bit more about package development in general and our guidelines.</p>
+<div id="learning-about-package-development" class="section level3">
+<h3><span class="header-section-number">14.1.1</span> Learning about package development</h3>
+<div id="tutorials" class="section level4">
+<h4><span class="header-section-number">14.1.1.1</span> Tutorials</h4>
 <ul>
-<li>Watch all issues posted to the onboarding repo:</li>
-<li>Assigns packages to other editors, including self, to handle. Mostly this just rotates among editors, unless the EiC thinks an editor is particularly suited to a package, or an editor rejects due to being too busy/conflict of interest.</li>
-<li>Raises scope/overlap issue with all editors if they see an ambiguous case. This may also be done by handling editors (see below). To initiate discussion, this is posted to the rOpenSci Slack onboarding channel, tagging all editors.</li>
-<li>Responds to pre-submission inquiries and <code>meta</code> issues posted to the onboarding repo, similarly pinging channel if discussion needed. But editors should all feel free to chime in on these if they want.</li>
-<li>See <a href="onboarding-guide-for-editors.html#outofscoperesponse">this section</a> about how to respond to out-of-scope (pre-) submissions.</li>
-<li>Responds to referrals from JOSS or other publication partners.</li>
-<li>Monitors pace of review process and reminds other editors to move packages along as needed.</li>
+<li><p><a href="https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/">Hilary Parker’s famous blog post <em>Writing an R package from scratch</em></a></p></li>
+<li><p><a href="http://www.mjdenny.com/R_Package_Pictorial.html">this pictorial by Matthew J Denny</a></p></li>
 </ul>
 </div>
-<div id="editorchecklist" class="section level2">
-<h2><span class="header-section-number">8.2</span> Handling Editor’s Checklist</h2>
-<div id="upon-submission" class="section level3">
-<h3><span class="header-section-number">8.2.1</span> Upon submission:</h3>
+<div id="books" class="section level4">
+<h4><span class="header-section-number">14.1.1.2</span> Books</h4>
 <ul>
-<li>Tag issue with <code>1/editor-checks</code> tag and assign a main editor if you haven’t already. Please strive to finish the checks and start looking for reviewers within 5 working days.</li>
-<li>Use the <a href="editortemplate.html#editortemplate">editor template</a> to guide initial checks and record your respose to the submission.</li>
-<li>Check that template has been properly filled out</li>
-<li>Check against policies for <a href="policies.html#aims-and-scope">fit</a> and <a href="policies.html#overlap">overlap</a>.
-Initiate discussion via slack #onboarding channel if needed for edge cases that haven’t been caught by previous checks by the editor-in-chief.
-If reject, see <a href="onboarding-guide-for-editors.html#outofscoperesponse">this section</a> about how to respond.</li>
-<li>Check that mandatory parts of template are complete. If not, direct authors toward appropriate instructions.</li>
-<li>Run run automated tests: <code>devtools::check()</code>, <code>goodpractice::gp()</code> (most exceptions will need to be justified by the author in the particular context of their package.), <code>devtools::spell_check()</code>. Run <code>covr::package_coverage()</code> using <code>NOT_CRAN</code> if needed, as well. Check that documentation is generated using <code>roxygen2</code>, not by hand (this isn’t part of automatic tests <a href="https://github.com/MangoTheCat/goodpractice/issues/116">yet</a>). Report relevant outputs in the issue thread.</li>
-<li>For packages needing continuous integration on multiple platforms (cf <a href="ci.html#whichci">criteria in this section of the CI chapter</a>) make sure the package gets tested on multiple platforms (having the package built on both Travis and Appveyor for instance).</li>
-<li>Wherever possible when asking for changes direct authors to automatic tools such as <a href="http://usethis.r-lib.org/"><code>usethis</code></a> and <a href="http://styler.r-lib.org/"><code>styler</code></a>, and to online resources (sections of this guide, sections of the <a href="http://r-pkgs.had.co.nz/">R packages book</a>) to make your feedback easier to use. <a href="https://github.com/ropensci/onboarding/issues/207#issuecomment-379909739">Example of editor’s checks</a>.</li>
-<li>If initial checks show major gaps, request changes before assigning reviewers.</li>
-<li>If the package raises a new issue for rOpenSci policy, start a conversation in Slack or open a discussion on the <a href="https://discuss.ropensci.org/">rOpenSci forum</a> to discuss it with other editors (<a href="">example</a><a href="https://discuss.ropensci.org/t/overlap-policy-for-package-onboarding/368" class="uri">https://discuss.ropensci.org/t/overlap-policy-for-package-onboarding/368</a>)</li>
+<li><p><a href="http://r-pkgs.had.co.nz/">Hadley Wickham’s <em>R packages</em> book</a></p></li>
+<li><p><a href="http://cran.r-project.org/doc/manuals/r-release/R-exts.html"><em>Writing R extensions</em>, the official CRAN guide</a></p></li>
+<li><p><a href="https://bookdown.org/rdpeng/RProgDA/"><em>Mastering Software Development in R</em> by Roger D. Peng, Sean Kross, and Brooke Anderson</a></p></li>
+<li><p><a href="http://adv-r.had.co.nz/"><em>Advanced R</em> by Hadley Wickham</a></p></li>
+<li><p><a href="https://www.crcpress.com/Testing-R-Code/Cotton/p/book/9781498763653"><em>Testing R code</em> by Richard Cotton</a></p></li>
 </ul>
-</div>
-<div id="assign-reviewers" class="section level3">
-<h3><span class="header-section-number">8.2.2</span> Assign reviewers:</h3>
-<ul>
-<li>Switch numbered tag to <code>2/seeking-reviewers</code></li>
-<li>Ask author to add a rOpenSci review badge to their README. Badge URL is <code>https://badges.ropensci.org/&lt;issue_id&gt;_status.svg</code>. Full link should be:</li>
-</ul>
-<pre><code>[![](https://badges.ropensci.org/&lt;issue_id&gt;_status.svg)](https://github.com/ropensci/onboarding/issues/&lt;issue_id&gt;)</code></pre>
-<ul>
-<li>Use the #onboarding slack channel for discussion about potential reviewers.</li>
-<li>Use the <a href="reviewrequesttemplate.html#reviewrequesttemplate">email template</a> if needed for inviting reviewers
-<ul>
-<li>When inviting reviewers, include something like “if I don’t hear from you in a week, I’ll assume you are unable to review,” so as to give a clear deadline when you’ll move on to looking for someone else.</li>
-</ul></li>
-<li>Assign a due date 3 weeks after all reviewers have been found.</li>
-<li><p>Once two or more reviewers are found, assign reviewer by tagging in the issue with the following format:</p>
-<p>Reviewer: <span class="citation">(<span class="citeproc-not-found" data-reference-id="githubname1"><strong>???</strong></span>)</span>
-Reviewer: <span class="citation">(<span class="citeproc-not-found" data-reference-id="githubname2"><strong>???</strong></span>)</span>
-Due date: YYYY-MM-DD</p></li>
-<li>Switch numbered tag <code>to 3/reviewers-assigned</code> once reviewers are assigned.</li>
-<li><p>Invite authors and reviewers to rOpenSci Slack if they aren’t on already.</p></li>
-</ul>
-</div>
-<div id="during-review" class="section level3">
-<h3><span class="header-section-number">8.2.3</span> During review:</h3>
-<ul>
-<li>Check in with reviewers and authors occasionally. Offer clarification and help as needed.</li>
-<li>In general aim for 3 weeks for review, 2 weeks for
-subsequent changes, and 1 week for reviewer approval of changes.</li>
-<li>Upon all reviews being submitted, change the review status tag to
-<code>4/review-in-awaiting-changes</code> to update the reminder bot.</li>
-<li>If the author stops responding, refers to <a href="policies.html#package-submission">the policies</a> and/or ping the other editors in the Slack channel for discussion. Importantly, if a reviewer was assigned to a closed issue, contact them when closing the issue to explain them the decision and thank them once again for their work, and make a note in our database to assign them to a submission with high chances of smooth onboarding next time (e.g. a package author who has already submitted packages to us).</li>
-<li>Upon changes being made, change the review status tag to <code>5/awaiting-reviewer-response</code>.</li>
-</ul>
-</div>
-<div id="after-review" class="section level3">
-<h3><span class="header-section-number">8.2.4</span> After review:</h3>
-<ul>
-<li>Change the status tag to <code>6/approved</code>.</li>
-<li>You can use the <a href="approvaltemplate.html#approvaltemplate">comment template</a></li>
-<li>Add review/er information to the review database.</li>
-<li>If authors intend to submit to CRAN, direct them to the <a href="building.html#crangotchas">section about CRAN gotchas</a> and offer to provide support through this process.</li>
-<li>Ask authors to migrate to <code>ropensci</code>
-<ul>
-<li>Create a two-person team in the ropensci organization, named for the package, with yourself and the package author as members.</li>
-<li>Have the author transfer the repository to <code>ropensci</code></li>
-<li>Go to the repository settings in the <code>ropensci</code> organization and give the author “Admin” access to the repository.</li>
-</ul></li>
-<li>Ask author to:
-<ul>
-<li>Add rOpenSci footer to README <code>[![ropensci_footer](https://ropensci.org/public_images/ropensci_footer.png)](https://ropensci.org)</code></li>
-<li>Add a CodeMeta file by running <code>codemetar::write_codemeta()</code> (<a href="https://github.com/ropensci/codemetar"><code>codemetar</code> GitHub repo</a>)</li>
-<li>Change any needed links, such those for CI badges</li>
-<li>Re-activate CI services
-<ul>
-<li>For Travis, activating the project in the ropensci account should be sufficient</li>
-<li>For Appveyor, tell the author to update the GitHub link in their badge, but do not transfer the project: Appveyor projects should remain under the authors’ account. The badge is <code>[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/pkgname?branch=master&amp;svg=true)](https://ci.appveyor.com/project/individualaccount/pkgname)</code>.</li>
-<li>For CodeCov, the webhook may need to be reset by the author.</li>
-</ul></li>
-</ul></li>
-<li>Close the onboarding issue.</li>
-</ul>
-</div>
-<div id="for-joint-joss-submissions" class="section level3">
-<h3><span class="header-section-number">8.2.5</span> For joint JOSS submissions:</h3>
-<ul>
-<li>After repo is transferred and admin rights assigned, have author generate
-a new release with a DOI.</li>
-<li>Ask author to submit package via <a href="http://joss.theoj.org/papers/new" class="uri">http://joss.theoj.org/papers/new</a></li>
-<li><p>Watch for paper to pop up at <a href="http://joss.theoj.org/papers" class="uri">http://joss.theoj.org/papers</a>, then
-add the following comment to the submission thread:</p>
-<p><code>This submission has been accepted to rOpenSci. The review thread can be  found at [LINK TO ONBOARDING ISSUE]</code></p></li>
-</ul>
-</div>
-<div id="package-promotion" class="section level3">
-<h3><span class="header-section-number">8.2.6</span> Package promotion:</h3>
-<ul>
-<li>Ask authors to write either a blog post or a tech-notes post for the package, as appropriate, and ping <a href="https://github.com/stefaniebutland">Stefanie Butland</a>, rOpenSci community manager.</li>
-<li>Alert maintainers of appropriate <a href="https://github.com/search?utf8=%E2%9C%93&amp;q=user%3Aropensci+%22task+view%22&amp;type=Repositories&amp;ref=searchresults">task views</a></li>
-<li>Direct the author to the chapters of the guide about <a href="#releases">package releases</a>, <a href="marketing.html#marketing">marketing</a> and <a href="grooming.html#grooming">GitHub grooming</a>.</li>
-</ul>
+<div id="mooc" class="section level5">
+<h5><span class="header-section-number">14.1.1.2.1</span> MOOC</h5>
+<p>There is a <a href="https://fr.coursera.org/specializations/r">Coursera specialization corresponding to the book by Roger Peng, Sean Kross and Brooke Anderson</a>, with a course specifically about R packages.</p>
 </div>
 </div>
-<div id="outofscoperesponse" class="section level2">
-<h2><span class="header-section-number">8.3</span> Responding to out-of-scope submissions</h2>
-<p>Thank authors for their submission, explain the reasons of the decision, and direct them to other publication venues if relevant, and to rOpenSci discuss forum. Use wording from <a href="policies.html#aims-and-scope">Aims and scope</a> in particular regarding the evolution of scope over time, and the overlap and differences between unconf/staff/onboarding development.</p>
-<p><a href="https://github.com/ropensci/onboarding/issues?q=is%3Aissue+is%3Aclosed+label%3Aout-of-scope">Examples of out-of-scope submissions and responses</a>.</p>
+</div>
+<div id="reading-about-our-guidelines" class="section level3">
+<h3><span class="header-section-number">14.1.2</span> Reading about our guidelines</h3>
+<p>See the whole first section, starting with the <a href="building.html#building">chapter about building a package</a></p>
+</div>
+</div>
+<div id="reporting-issues-or-feature-requests" class="section level2">
+<h2><span class="header-section-number">14.2</span> Reporting issues or feature requests</h2>
+<p>If you already have a package in mind, head to its issue tracker for reporting a bug or a feature request you might have. E.g. if you have a feature request for <code>magick</code>, the place to fill it is <a href="https://github.com/ropensci/magick/issues" class="uri">https://github.com/ropensci/magick/issues</a></p>
+</div>
+<div id="finding-where-to-contribute-code-or-documentation" class="section level2">
+<h2><span class="header-section-number">14.3</span> Finding where to contribute code or documentation</h2>
+<p>Most our packages are developped on GitHub. We have two organizations:</p>
+<ul>
+<li><p><a href="https://github.com/ropensci" class="uri">https://github.com/ropensci</a> for more mature packages,</p></li>
+<li><p><a href="https://github.com/ropenscilabs" class="uri">https://github.com/ropenscilabs</a> for experiments and packages that are not ready for release yet.</p></li>
+</ul>
+<p>If you already use one of our packages, you can have a look at its issue tracker and comment in one of the issues to ask the maintainer whether they’d be interested in your help. E.g. if you like <code>taxize</code>, the place to look is <a href="https://github.com/ropensci/taxize/issues" class="uri">https://github.com/ropensci/taxize/issues</a></p>
+<p>If you’re not a passionate user of one of our packages yet, you can find one to contribute to by browsing <a href="https://github.com/ropensci" class="uri">https://github.com/ropensci</a> for instance. In particular, you could browse issues targeted at beginner by using <a href="https://github.com/search?q=user%3Aropensci+user%3Aropenscilabs+label%3ABeginner+state%3Aopen&amp;type=Issues">the <code>contributr</code> Shiny app by Lucy D’Agostino McGowan</a>
+or by an advanced GitHub search such as <a href="https://github.com/search?q=user%3Aropensci+user%3Aropenscilabs+label%3ABeginner+state%3Aopen&amp;type=Issues">this one</a>.</p>
 
 </div>
 </div>
@@ -422,8 +339,8 @@ add the following comment to the submission thread:</p>
           </div>
         </div>
       </div>
-<a href="onboarding-guide-for-reviewers.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="collaboration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="evolution.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reviewtemplate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
