@@ -25,7 +25,7 @@
 <meta name="author" content="rOpenSci onboarding editorial team: Scott Chamberlain, Anna Krystalli, Lincoln Mullen, Karthik Ram, Noam Ross, Maëlle Salmon">
 
 
-<meta name="date" content="2018-07-03">
+<meta name="date" content="2018-07-05">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -214,7 +214,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>III Maintaining Packages</b></span></li>
 <li class="chapter" data-level="9" data-path="collaboration.html"><a href="collaboration.html"><i class="fa fa-check"></i><b>9</b> Collaboration Guide</a><ul>
-<li class="chapter" data-level="9.1" data-path="collaboration.html"><a href="collaboration.html#friendlyfiles"><i class="fa fa-check"></i><b>9.1</b> Make your repo contribution- and collaboration- friendly</a><ul>
+<li class="chapter" data-level="9.1" data-path="collaboration.html"><a href="collaboration.html#friendlyfiles"><i class="fa fa-check"></i><b>9.1</b> Make your repo contribution- and collaboration-friendly</a><ul>
 <li class="chapter" data-level="9.1.1" data-path="collaboration.html"><a href="collaboration.html#code-of-conduct-1"><i class="fa fa-check"></i><b>9.1.1</b> Code of conduct</a></li>
 <li class="chapter" data-level="9.1.2" data-path="collaboration.html"><a href="collaboration.html#contributing-guide"><i class="fa fa-check"></i><b>9.1.2</b> Contributing guide</a></li>
 <li class="chapter" data-level="9.1.3" data-path="collaboration.html"><a href="collaboration.html#issue-labelling"><i class="fa fa-check"></i><b>9.1.3</b> Issue labelling</a></li>
@@ -287,7 +287,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Onboarding at rOpenSci is managed by a team of editors. We are piloting a system of a rotating Editor-in-Chief (EiC).
 </p>
 <p>
-This chapter presents the responsabilities <a href="onboarding-guide-for-editors.html#eicchecklist">of the Editor-in-Chief</a>, of <a href="onboarding-guide-for-editors.html#editorchecklist">any editor in charge of a submission</a>, and <a href="onboarding-guide-for-editors.html#outofscoperesponse">how to respond to an out-of-scope submission</a>.
+This chapter presents the responsibilities <a href="onboarding-guide-for-editors.html#eicchecklist">of the Editor-in-Chief</a>, of <a href="onboarding-guide-for-editors.html#editorchecklist">any editor in charge of a submission</a>, and <a href="onboarding-guide-for-editors.html#outofscoperesponse">how to respond to an out-of-scope submission</a>.
 </p>
 <p>
 If you’re a guest editor, thanks for helping! Please contact the editor who invited you to handle a submission for any question you might have.
@@ -298,10 +298,10 @@ If you’re a guest editor, thanks for helping! Please contact the editor who in
 <p>The EiC serves for 3 months or a time agreed to by all members of the editorial
 board. The EiC plays the following roles</p>
 <ul>
-<li>Watch all issues posted to the onboarding repo:</li>
-<li>Assigns packages to other editors, including self, to handle. Mostly this just rotates among editors, unless the EiC thinks an editor is particularly suited to a package, or an editor rejects due to being too busy/conflict of interest.</li>
+<li>Watch all issues posted to the onboarding repo.</li>
+<li>Assigns package submissions to other editors, including self, to handle. Mostly this just rotates among editors, unless the EiC thinks an editor is particularly suited to a package, or an editor rejects due to being too busy/conflict of interest.</li>
 <li>Raises scope/overlap issue with all editors if they see an ambiguous case. This may also be done by handling editors (see below). To initiate discussion, this is posted to the rOpenSci Slack onboarding channel, tagging all editors.</li>
-<li>Responds to pre-submission inquiries and <code>meta</code> issues posted to the onboarding repo, similarly pinging channel if discussion needed. But editors should all feel free to chime in on these if they want.</li>
+<li>Responds to pre-submission inquiries and <code>meta</code> issues posted to the onboarding repo, similarly pinging channel if discussion is needed. Any editor should feel free to chime in on these.</li>
 <li>See <a href="onboarding-guide-for-editors.html#outofscoperesponse">this section</a> about how to respond to out-of-scope (pre-) submissions.</li>
 <li>Responds to referrals from JOSS or other publication partners.</li>
 <li>Monitors pace of review process and reminds other editors to move packages along as needed.</li>
@@ -312,29 +312,29 @@ board. The EiC plays the following roles</p>
 <div id="upon-submission" class="section level3">
 <h3><span class="header-section-number">8.2.1</span> Upon submission:</h3>
 <ul>
-<li>Tag issue with <code>1/editor-checks</code> tag and assign a main editor if you haven’t already. Please strive to finish the checks and start looking for reviewers within 5 working days.</li>
+<li>Tag issue with <code>1/editor-checks</code> tag and assign a main editor. Please strive to finish the checks and start looking for reviewers within 5 working days.</li>
 <li>Use the <a href="editortemplate.html#editortemplate">editor template</a> to guide initial checks and record your respose to the submission.</li>
-<li>Check that template has been properly filled out</li>
+<li>Check that template has been properly filled out.</li>
 <li>Check against policies for <a href="policies.html#aims-and-scope">fit</a> and <a href="policies.html#overlap">overlap</a>.
-Initiate discussion via slack #onboarding channel if needed for edge cases that haven’t been caught by previous checks by the editor-in-chief.
+Initiate discussion via Slack #onboarding channel if needed for edge cases that haven’t been caught by previous checks by the EiC.
 If reject, see <a href="onboarding-guide-for-editors.html#outofscoperesponse">this section</a> about how to respond.</li>
 <li>Check that mandatory parts of template are complete. If not, direct authors toward appropriate instructions.</li>
-<li>Run run automated tests: <code>spelling::spell_check_package()</code>, <code>goodpractice::gp()</code> (most exceptions will need to be justified by the author in the particular context of their package.), <code>devtools::spell_check()</code>. Run <code>covr::package_coverage()</code> using <code>NOT_CRAN</code> if needed, as well. Check that documentation is generated using <code>roxygen2</code>, not by hand (this isn’t part of automatic tests <a href="https://github.com/MangoTheCat/goodpractice/issues/116">yet</a>). Report relevant outputs in the issue thread.</li>
+<li>Run automated tests: <code>spelling::spell_check_package()</code>, <code>goodpractice::gp()</code> (most exceptions will need to be justified by the author in the particular context of their package.), <code>devtools::spell_check()</code>. Run <code>covr::package_coverage()</code> using <code>NOT_CRAN</code> if needed, as well. Check that documentation is generated using <code>roxygen2</code>, not by hand (this isn’t part of automatic tests <a href="https://github.com/MangoTheCat/goodpractice/issues/116">yet</a>). Report relevant outputs in the issue thread.</li>
 <li>For packages needing continuous integration on multiple platforms (cf <a href="ci.html#whichci">criteria in this section of the CI chapter</a>) make sure the package gets tested on multiple platforms (having the package built on both Travis and Appveyor for instance).</li>
-<li>Wherever possible when asking for changes direct authors to automatic tools such as <a href="http://usethis.r-lib.org/"><code>usethis</code></a> and <a href="http://styler.r-lib.org/"><code>styler</code></a>, and to online resources (sections of this guide, sections of the <a href="http://r-pkgs.had.co.nz/">R packages book</a>) to make your feedback easier to use. <a href="https://github.com/ropensci/onboarding/issues/207#issuecomment-379909739">Example of editor’s checks</a>.</li>
+<li>Wherever possible when asking for changes, direct authors to automatic tools such as <a href="http://usethis.r-lib.org/"><code>usethis</code></a> and <a href="http://styler.r-lib.org/"><code>styler</code></a>, and to online resources (sections of this guide, sections of the <a href="http://r-pkgs.had.co.nz/">R packages book</a>) to make your feedback easier to use. <a href="https://github.com/ropensci/onboarding/issues/207#issuecomment-379909739">Example of editor’s checks</a>.</li>
 <li>If initial checks show major gaps, request changes before assigning reviewers.</li>
-<li>If the package raises a new issue for rOpenSci policy, start a conversation in Slack or open a discussion on the <a href="https://discuss.ropensci.org/">rOpenSci forum</a> to discuss it with other editors (<a href="">example</a><a href="https://discuss.ropensci.org/t/overlap-policy-for-package-onboarding/368" class="uri">https://discuss.ropensci.org/t/overlap-policy-for-package-onboarding/368</a>)</li>
+<li>If the package raises a new issue for rOpenSci policy, start a conversation in Slack or open a discussion on the <a href="https://discuss.ropensci.org/">rOpenSci forum</a> to discuss it with other editors <a href="https://discuss.ropensci.org/t/overlap-policy-for-package-onboarding/368">Example of policy discussion</a></li>
 </ul>
 </div>
 <div id="assign-reviewers" class="section level3">
 <h3><span class="header-section-number">8.2.2</span> Assign reviewers:</h3>
 <ul>
-<li>Switch numbered tag to <code>2/seeking-reviewers</code></li>
+<li>Switch numbered tag to <code>2/seeking-reviewers</code>.</li>
 <li>Ask author to add a rOpenSci review badge to their README. Badge URL is <code>https://badges.ropensci.org/&lt;issue_id&gt;_status.svg</code>. Full link should be:</li>
 </ul>
 <pre><code>[![](https://badges.ropensci.org/&lt;issue_id&gt;_status.svg)](https://github.com/ropensci/onboarding/issues/&lt;issue_id&gt;)</code></pre>
 <ul>
-<li>Use the #onboarding slack channel for discussion about potential reviewers.</li>
+<li>Use the #onboarding Slack channel for discussion about potential reviewers.</li>
 <li>Use the <a href="reviewrequesttemplate.html#reviewrequesttemplate">email template</a> if needed for inviting reviewers
 <ul>
 <li>When inviting reviewers, include something like “if I don’t hear from you in a week, I’ll assume you are unable to review,” so as to give a clear deadline when you’ll move on to looking for someone else.</li>
@@ -356,7 +356,7 @@ Due date: YYYY-MM-DD</p></li>
 subsequent changes, and 1 week for reviewer approval of changes.</li>
 <li>Upon all reviews being submitted, change the review status tag to
 <code>4/review-in-awaiting-changes</code> to update the reminder bot.</li>
-<li>If the author stops responding, refers to <a href="policies.html#package-submission">the policies</a> and/or ping the other editors in the Slack channel for discussion. Importantly, if a reviewer was assigned to a closed issue, contact them when closing the issue to explain them the decision and thank them once again for their work, and make a note in our database to assign them to a submission with high chances of smooth onboarding next time (e.g. a package author who has already submitted packages to us).</li>
+<li>If the author stops responding, refer to <a href="policies.html#package-submission">the policies</a> and/or ping the other editors in the Slack channel for discussion. Importantly, if a reviewer was assigned to a closed issue, contact them when closing the issue to explain the decision, thank them once again for their work, and make a note in our database to assign them to a submission with high chances of smooth onboarding next time (e.g. a package author who has already submitted packages to us).</li>
 <li>Upon changes being made, change the review status tag to <code>5/awaiting-reviewer-response</code>.</li>
 </ul>
 </div>
@@ -364,7 +364,7 @@ subsequent changes, and 1 week for reviewer approval of changes.</li>
 <h3><span class="header-section-number">8.2.4</span> After review:</h3>
 <ul>
 <li>Change the status tag to <code>6/approved</code>.</li>
-<li>You can use the <a href="approvaltemplate.html#approvaltemplate">comment template</a></li>
+<li>You can use the <a href="approvaltemplate.html#approvaltemplate">comment template</a>.</li>
 <li>Add review/er information to the review database.</li>
 <li>If authors intend to submit to CRAN, direct them to the <a href="building.html#crangotchas">section about CRAN gotchas</a> and offer to provide support through this process.</li>
 <li>Ask authors to migrate to <code>ropensci</code>
@@ -391,7 +391,7 @@ subsequent changes, and 1 week for reviewer approval of changes.</li>
 <div id="for-joint-joss-submissions" class="section level3">
 <h3><span class="header-section-number">8.2.5</span> For joint JOSS submissions:</h3>
 <ul>
-<li>After repo is transferred and admin rights assigned, have author generate
+<li>After repo is transferred to ropensci and admin rights assigned, have author generate
 a new release with a DOI.</li>
 <li>Ask author to submit package via <a href="http://joss.theoj.org/papers/new" class="uri">http://joss.theoj.org/papers/new</a></li>
 <li><p>Watch for paper to pop up at <a href="http://joss.theoj.org/papers" class="uri">http://joss.theoj.org/papers</a>, then
@@ -410,7 +410,7 @@ add the following comment to the submission thread:</p>
 </div>
 <div id="outofscoperesponse" class="section level2">
 <h2><span class="header-section-number">8.3</span> Responding to out-of-scope submissions</h2>
-<p>Thank authors for their submission, explain the reasons of the decision, and direct them to other publication venues if relevant, and to rOpenSci discuss forum. Use wording from <a href="policies.html#aims-and-scope">Aims and scope</a> in particular regarding the evolution of scope over time, and the overlap and differences between unconf/staff/onboarding development.</p>
+<p>Thank authors for their submission, explain the reasons for the decision, and direct them to other publication venues if relevant, and to the rOpenSci discussion forum. Use wording from <a href="policies.html#aims-and-scope">Aims and scope</a> in particular regarding the evolution of scope over time, and the overlap and differences between unconf/staff/onboarding development.</p>
 <p><a href="https://github.com/ropensci/onboarding/issues?q=is%3Aissue+is%3Aclosed+label%3Aout-of-scope">Examples of out-of-scope submissions and responses</a>.</p>
 
 </div>

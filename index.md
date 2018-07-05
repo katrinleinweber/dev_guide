@@ -1,7 +1,7 @@
 --- 
 title: "rOpenSci Packages: Development, Maintenance, and Peer Review"
 author: "rOpenSci onboarding editorial team: Scott Chamberlain, Anna Krystalli, Lincoln Mullen, Karthik Ram, Noam Ross, Maëlle Salmon"
-date: "2018-07-03"
+date: "2018-07-05"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -14,7 +14,7 @@ description: "Extended version of the onboarding packaging guide."
 
 # Preface {-}
 
-This book has the ambition to become a guide for maintainers of rOpenSci packages, in particular volunteers who submit a package to onboarding. 
+This book has the ambition to become a guide for maintainers of rOpenSci packages, in particular, people who volunteer to submit a package to onboarding. 
 
 The [first section of the book](#building) presents our guidelines for building and testing your package. 
 
