@@ -5,7 +5,7 @@
 <p>Along with <a href="#building">last chapter</a>, it forms our guidelines for onboarding reviews.</p>
 </div>
 
-## Why use continuous integration?
+## Why use continuous integration (CI)?
 
 All rOpenSci packages must use one form of continuous integration. This ensures that all commits, pull requests, and new branches are run through `R CMD check`. rOpenSci packages' continuous integration must also be linked to a code coverage service, indicating how many lines are covered by unit tests.
 
