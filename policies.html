@@ -180,9 +180,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="policies.html"><a href="policies.html#package-submission"><i class="fa fa-check"></i><b>5.1</b> Package submission</a><ul>
 <li class="chapter" data-level="5.1.1" data-path="policies.html"><a href="policies.html#review-process"><i class="fa fa-check"></i><b>5.1.1</b> Review process</a></li>
 <li class="chapter" data-level="5.1.2" data-path="policies.html"><a href="policies.html#aims-and-scope"><i class="fa fa-check"></i><b>5.1.2</b> Aims and Scope</a></li>
-<li class="chapter" data-level="5.1.3" data-path="policies.html"><a href="policies.html#package-categories"><i class="fa fa-check"></i><b>5.1.3</b> Package categories</a></li>
-<li class="chapter" data-level="5.1.4" data-path="policies.html"><a href="policies.html#other-scope-considerations"><i class="fa fa-check"></i><b>5.1.4</b> Other Scope Considerations</a></li>
-<li class="chapter" data-level="5.1.5" data-path="policies.html"><a href="policies.html#overlap"><i class="fa fa-check"></i><b>5.1.5</b> Package overlap</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="policies.html"><a href="policies.html#ownership-after-onboarding"><i class="fa fa-check"></i><b>5.2</b> Package ownership and maintenance</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="policies.html"><a href="policies.html#role-of-the-ropensci-team"><i class="fa fa-check"></i><b>5.2.1</b> Role of the rOpenSci team</a></li>
@@ -302,7 +299,7 @@ Last but not least, you’ll find the code of conduct of rOpenSci onboarding <a 
 <ul>
 <li>For a package to be considered for the rOpenSci suite, package authors must initiate a request on the <a href="https://github.com/ropensci/onboarding">ropensci/onboarding</a> repository.</li>
 <li>Packages are reviewed for quality, fit, documentation, clarity and the review process is quite similar to a manuscript review (see our <a href="packaging_guide.md">packaging guide</a> and <a href="reviewing_guide.md">reviewing guide</a> for more details). Unlike a manuscript review, this process will be an ongoing conversation.</li>
-<li>Once all major issues and questions, and those addressable with reasonable effort, are resolved, the editor assigned to a package will make a decision (accept, hold, or reject). Rejections are usually done early (before the review process begins), but in rare cases a package may also be rejected after review &amp; revision. It is ultimately editor’s decision on whether or not to reject the package based on how the reviews are addressed.</li>
+<li>Once all major issues and questions, and those addressable with reasonable effort, are resolved, the editor assigned to a package will make a decision (accept, hold, or reject). Rejections are usually done early (before the review process begins, see <a href="policies.html#aims-and-scope">the aims and scope section</a>), but in rare cases a package may also be not onboarded after review &amp; revision. It is ultimately editor’s decision on whether or not to reject the package based on how the reviews are addressed.</li>
 <li>Communication between submitters, reviewers and editors will first and foremost take place on GitHub, although you can choose to contact the editor by email or Slack for certain issues. When submitting a package please make sure your GitHub notification settings make it unlikely you will miss a comment.</li>
 <li>The submitter can choose to have their submission put on hold (editor applies the holding label). The holding status will be revisited every 3 months, and after one year the issue will be closed.</li>
 <li>If the submitter hasn’t requested a holding label, but is simply not responding, we should close the issue within one month after the last contact intent. This intent will include a comment tagging the submitter, but also an email using the email address listed in the DESCRIPTION of the package which is one of the rare cases where the editor will try to contact the author by email.</li>
@@ -316,9 +313,8 @@ categories outlined below. If you are unsure whether your package fits into one 
 (<a href="https://github.com/ropensci/onboarding/issues?q=is%3Aissue+label%3A0%2Fpresubmission"><strong>Examples</strong></a>).</p>
 <p>As as this is a living document, these categories may change through time and not all previously onboarded packages would be in-scope today. While we strive to be consistent, we evaluate packages on a case-by-case basis and may make exceptions.</p>
 <p>Please note that rOpenSci package development happens in several different spaces: unconferences, internal development by <a href="https://ropensci.org/about/#team">staff</a>, and onboarding, which can be confusing. The emphasis of the unconference is on experimentation, exploration and community-building - participants work on all kinds of things that wouldn’t be in scope for onboarding. Similarly, some of the software developed by rOpenSci staff is focused on filling gaps in R infrastructure and wouldn’t be in-scope.</p>
-</div>
-<div id="package-categories" class="section level3">
-<h3><span class="header-section-number">5.1.3</span> Package categories</h3>
+<div id="package-categories" class="section level4">
+<h4><span class="header-section-number">5.1.2.1</span> Package categories</h4>
 <ul>
 <li><p><strong>data retrieval</strong>: Packages for accessing and downloading data from online sources with scientific applications. Our definition of scientific applications is broad, including data storage services, journals, and other remote servers, as many data sources may be of interest to researchers. However, retrieval packages should be focused on data <em>sources</em> / <em>topics</em>, rather than <em>services</em>. For example a general client for Amazon Web Services data storage would not be in-scope. (Examples: <a href="https://github.com/ropensci/onboarding/issues/17"><strong>rotl</strong></a>,
 <a href="https://github.com/ropensci/onboarding/issues/41"><strong>gutenbergr</strong></a>)</p></li>
@@ -335,8 +331,8 @@ categories outlined below. If you are unsure whether your package fits into one 
 <li><p><strong>text analysis</strong>: We are currently <em>piloting</em> a sub-specialty area for text analysis which includes implementation of statistical/ML methods for analyzing or extracting text data. This does not include packages with new methods, but only implementation or wrapping of previously published methods. As this is a pilot, the scope for this topic is not fully defined and we are still developing a reviewer base and process for this area. Please open a pre-submission inquiry if you are considering submitting a package that falls under this topic.</p></li>
 </ul>
 </div>
-<div id="other-scope-considerations" class="section level3">
-<h3><span class="header-section-number">5.1.4</span> Other Scope Considerations</h3>
+<div id="other-scope-considerations" class="section level4">
+<h4><span class="header-section-number">5.1.2.2</span> Other Scope Considerations</h4>
 <p>Packages should be <em>general</em> in that they should solve a problem as broadly as possible while maintaining a coherent user interface and code base. For instance if several data sources use an identical API, we prefer a package that provides access to all the data sources, rather than just one.</p>
 <p>Here are some types of packages we are unlikely to accept:</p>
 <ul>
@@ -347,8 +343,8 @@ categories outlined below. If you are unsure whether your package fits into one 
 <p>We encourage submitting packages not accepted to rOpenSci to submit to CRAN, BioConductor, as well as other R package development initiatives (e.g., <a href="https://cloudyr.github.io/">cloudyr</a>), and software journals such as JOSS, JSS, or the R journal.</p>
 <p>Note that not all packages developed internally by rOpenSci or through our events or collaborations are in-scope for our onboarding process.</p>
 </div>
-<div id="overlap" class="section level3">
-<h3><span class="header-section-number">5.1.5</span> Package overlap</h3>
+<div id="overlap" class="section level4">
+<h4><span class="header-section-number">5.1.2.3</span> Package overlap</h4>
 <p>rOpenSci encourages competition among packages, forking and re-implementation as they improve options of users overall. However, as we want packages in the rOpenSci suite to be our top recommendations for the tasks they perform, we aim to avoid duplication of functionality of existing R packages in any repo without significant improvements. An R package that replicates the functionality of an existing R package may be considered for inclusion in the rOpenSci suite if it significantly improves on alternatives in any repository (RO, CRAN, BioC) by being:</p>
 <ul>
 <li>More open in licensing or development practices</li>
@@ -359,6 +355,7 @@ categories outlined below. If you are unsure whether your package fits into one 
 <p>These factors should be considered <em>as a whole</em> to determine if the package is a significant improvement. A new package would not meet this standard only by following our package guidelines while others do not, unless this leads to a significant difference in the areas above.</p>
 <p>We recommend that packages highlight differences from and improvements over overlapping packages in their README and/or vignettes.</p>
 <p>We encourage developers whose packages are not accepted due to overlap to still consider submittal to other repositories or journals.</p>
+</div>
 </div>
 </div>
 <div id="ownership-after-onboarding" class="section level2">
