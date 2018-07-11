@@ -25,7 +25,7 @@
 <meta name="author" content="rOpenSci onboarding editorial team: Scott Chamberlain, Anna Krystalli, Lincoln Mullen, Karthik Ram, Noam Ross, Maëlle Salmon">
 
 
-<meta name="date" content="2018-07-09">
+<meta name="date" content="2018-07-11">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -441,7 +441,7 @@ can be found at <em>link</em>.</p></li>
 <ul>
 <li><p>Use <code>Imports</code> instead of <code>Depends</code> for packages providing functions from other packages. Make sure to list packages used for testing (<code>testthat</code>), and documentation (<code>knitr</code>, <code>roxygen2</code>) in your <code>Suggests</code> section of package dependencies. If you use any packages in your examples sections, make sure to list those, if not already listed elsewhere, in <code>Suggests</code> section of package dependencies.</p></li>
 <li><p>For most cases where you must expose functions from dependencies to the user, you should import and re-export those individual functions rather than listing them in the <code>Depends</code> fields. For instance, if functions in your package produce <code>raster</code> objects, you might re-export only printing and plotting functions from the <strong>raster</strong> package.</p></li>
-<li><p>If your package uses a system dependency, you should indicate it in DESCRIPTION and check for it in the configure script and give a helpful error message if it cannot be found. <a href="https://github.com/ropensci/magick/blob/c116b2b8505f491db72a139b61cd543b7a2ce873/DESCRIPTION#L19">Example of a line indicating a system dependency in DESCRIPTION</a>, <a href="https://github.com/ropensci/magick/blob/c116b2b8505f491db72a139b61cd543b7a2ce873/configure#L72">example of how a configure script checks for the dependency</a>. You should also check the dependency is listed by <a href="https://github.com/r-hub/sysreqsdb#sysreqs"><code>sysreqsdb</code></a> in order to ensure automatic tools building packages don’t have a hard time with your package. See <a href="https://github.com/r-hub/sysreqsdb#contributing"><code>sysreqsdb</code> contributing guidelines</a>.</p></li>
+<li><p>If your package uses a system dependency, you should indicate it in DESCRIPTION and check for it in the configure script and give a helpful error message if it cannot be found. <a href="https://github.com/ropensci/magick/blob/c116b2b8505f491db72a139b61cd543b7a2ce873/DESCRIPTION#L19">Example of a line indicating a system dependency in DESCRIPTION</a>, <a href="https://github.com/cran/webp/blob/master/configure">example of a configure script that checks for the dependency</a>. Don’t hesitate to have a look at <a href="https://github.com/search?q=org%3Acran+anticonf&amp;type=Code">more configure scripts</a> or to <a href="https://discuss.ropensci.org/">ask for help</a>, because your configure script might need to do some hacky things since the config script is where you put all the hacks needed to make a particular library work. You should also check the dependency is listed by <a href="https://github.com/r-hub/sysreqsdb#sysreqs"><code>sysreqsdb</code></a> in order to ensure automatic tools building packages don’t have a hard time with your package. See <a href="https://github.com/r-hub/sysreqsdb#contributing"><code>sysreqsdb</code> contributing guidelines</a>.</p></li>
 </ul>
 </div>
 <div id="recommended-scaffolding" class="section level2">
