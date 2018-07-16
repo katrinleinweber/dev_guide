@@ -25,7 +25,7 @@
 <meta name="author" content="rOpenSci onboarding editorial team: Scott Chamberlain, Anna Krystalli, Lincoln Mullen, Karthik Ram, Noam Ross, Maëlle Salmon">
 
 
-<meta name="date" content="2018-07-14">
+<meta name="date" content="2018-07-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -253,12 +253,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.4" data-path="evolution.html"><a href="evolution.html#functions-deprecate-defunct"><i class="fa fa-check"></i><b>13.4</b> Functions: deprecate &amp; defunct</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="contributingguide.html"><a href="contributingguide.html"><i class="fa fa-check"></i><b>14</b> Contributing Guide</a><ul>
-<li class="chapter" data-level="14.1" data-path="contributingguide.html"><a href="contributingguide.html#pre-requisites"><i class="fa fa-check"></i><b>14.1</b> Pre-requisites</a><ul>
-<li class="chapter" data-level="14.1.1" data-path="contributingguide.html"><a href="contributingguide.html#learning-about-package-development"><i class="fa fa-check"></i><b>14.1.1</b> Learning about package development</a></li>
-<li class="chapter" data-level="14.1.2" data-path="contributingguide.html"><a href="contributingguide.html#reading-about-our-guidelines"><i class="fa fa-check"></i><b>14.1.2</b> Reading about our guidelines</a></li>
-</ul></li>
+<li class="chapter" data-level="14.1" data-path="contributingguide.html"><a href="contributingguide.html#reporting-use-cases"><i class="fa fa-check"></i><b>14.1</b> Reporting use cases</a></li>
 <li class="chapter" data-level="14.2" data-path="contributingguide.html"><a href="contributingguide.html#reporting-issues-or-feature-requests"><i class="fa fa-check"></i><b>14.2</b> Reporting issues or feature requests</a></li>
-<li class="chapter" data-level="14.3" data-path="contributingguide.html"><a href="contributingguide.html#reporting-use-cases"><i class="fa fa-check"></i><b>14.3</b> Reporting use cases</a></li>
+<li class="chapter" data-level="14.3" data-path="contributingguide.html"><a href="contributingguide.html#prerequisites-for-package-development"><i class="fa fa-check"></i><b>14.3</b> Prerequisites for package development</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="contributingguide.html"><a href="contributingguide.html#learning-about-package-development"><i class="fa fa-check"></i><b>14.3.1</b> Learning about package development</a></li>
+<li class="chapter" data-level="14.3.2" data-path="contributingguide.html"><a href="contributingguide.html#reading-about-our-guidelines"><i class="fa fa-check"></i><b>14.3.2</b> Reading about our guidelines</a></li>
+</ul></li>
 <li class="chapter" data-level="14.4" data-path="contributingguide.html"><a href="contributingguide.html#finding-where-to-contribute-code-or-documentation"><i class="fa fa-check"></i><b>14.4</b> Finding where to contribute code or documentation</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
@@ -289,22 +289,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="contributingguide" class="section level1">
 <h1><span class="header-section-number">Chapter 14</span> Contributing Guide</h1>
-<p>So you want to contribute to rOpenSci packages? Fantastic! First of all, maybe contributing to a package is not the (only) way you’ll want to get involved with rOpenSci. Check out our <a href="https://ropensci.org/community/">community page</a> to find out all the ways to participate in the project.</p>
-<p>Thanks for wanting to contribute to rOpenSci packages. We strive to make contributing to our suite a constructive and positive experience. See <a href="https://ropensci.org/coc/">our code of conduct</a>. Regarding this guide itself, please report any suggestions via <a href="https://github.com/ropensci/dev_guide">this GitHub repository</a>.</p>
-<div id="pre-requisites" class="section level2">
-<h2><span class="header-section-number">14.1</span> Pre-requisites</h2>
+<div class="summaryblock">
+<p>
+This chapter outlines how you can contribute to the rOpenSci project as a user or developer.
+</p>
+</div>
+<p>So you want to contribute to rOpenSci? Fantastic! First of all, maybe contributing code or documentation to a package is not the (only) way you’ll want to get involved. Check out our <a href="https://ropensci.org/community/">community page</a> to find out all the ways to participate in the project, from reading about our packages to volunteering to review them.</p>
+<p>We strive to make contributing to our suite a constructive and positive experience and we welcome participation that adheres to <a href="https://ropensci.org/coc/">our code of conduct</a>.</p>
+<p>If you wish to contribute to this guide itself, please report any suggestions via <a href="https://github.com/ropensci/dev_guide">this GitHub repository</a>.</p>
+<div id="reporting-use-cases" class="section level2">
+<h2><span class="header-section-number">14.1</span> Reporting use cases</h2>
+<p>It’s valuable to both users and developers of a package to see how it has been used “in the wild”. If you see a use case of one of our packages, please post the link to our <a href="https://discuss.ropensci.org/c/usecases">discussion forum in the Use Cases category</a> and tag Scott Chamberlain (<span class="citation">(<span class="citeproc-not-found" data-reference-id="sckott"><strong>???</strong></span>)</span>) for inclusion in the <a href="https://news.ropensci.org/">rOpenSci biweekly newsletter</a>. Let the package author know by opening an issue in the GitHub repository for that package, perhaps suggesting they create a “use cases in the wild” section in the README, and maybe even tag them in a tweet about the use case. This goes a long way to encouraging people to keep up development knowing there are others who appreciate and build on their work.</p>
+<p>See examples of README’s listing use cases in the wild <a href="https://github.com/ropenscilabs/ghrecipes/blob/master/README.md#use-cases-in-the-wild">here</a> and <a href="https://github.com/ropensci/riem/blob/master/README.md#use-cases-in-the-wild">here</a>.</p>
+</div>
+<div id="reporting-issues-or-feature-requests" class="section level2">
+<h2><span class="header-section-number">14.2</span> Reporting issues or feature requests</h2>
+<p>If you already have a package in mind, head to its issue tracker to report a bug or a feature request you might have. E.g. if you have a feature request for <code>magick</code>, the place to fill it is <a href="https://github.com/ropensci/magick/issues" class="uri">https://github.com/ropensci/magick/issues</a></p>
+<p>When reporting a bug try to include a reproducible example - a “<a href="https://www.tidyverse.org/help/#reprex">reprex</a>” - to help the package author help you.</p>
+</div>
+<div id="prerequisites-for-package-development" class="section level2">
+<h2><span class="header-section-number">14.3</span> Prerequisites for package development</h2>
 <p>Before contributing to one of our packages, you might want to read a bit more about package development in general and our guidelines.</p>
 <div id="learning-about-package-development" class="section level3">
-<h3><span class="header-section-number">14.1.1</span> Learning about package development</h3>
+<h3><span class="header-section-number">14.3.1</span> Learning about package development</h3>
 <div id="tutorials" class="section level4">
-<h4><span class="header-section-number">14.1.1.1</span> Tutorials</h4>
+<h4><span class="header-section-number">14.3.1.1</span> Tutorials</h4>
 <ul>
 <li><p><a href="https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/">Hilary Parker’s famous blog post <em>Writing an R package from scratch</em></a></p></li>
-<li><p><a href="http://www.mjdenny.com/R_Package_Pictorial.html">this pictorial by Matthew J Denny</a></p></li>
+<li><p><a href="http://www.mjdenny.com/R_Package_Pictorial.html">This pictorial by Matthew J Denny</a></p></li>
 </ul>
 </div>
 <div id="books" class="section level4">
-<h4><span class="header-section-number">14.1.1.2</span> Books</h4>
+<h4><span class="header-section-number">14.3.1.2</span> Books</h4>
 <ul>
 <li><p><a href="http://r-pkgs.had.co.nz/">Hadley Wickham’s <em>R packages</em> book</a></p></li>
 <li><p><a href="http://cran.r-project.org/doc/manuals/r-release/R-exts.html"><em>Writing R extensions</em>, the official CRAN guide</a></p></li>
@@ -312,35 +328,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><a href="http://adv-r.had.co.nz/"><em>Advanced R</em> by Hadley Wickham</a></p></li>
 <li><p><a href="https://www.crcpress.com/Testing-R-Code/Cotton/p/book/9781498763653"><em>Testing R code</em> by Richard Cotton</a></p></li>
 </ul>
-<div id="mooc" class="section level5">
-<h5><span class="header-section-number">14.1.1.2.1</span> MOOC</h5>
+<div id="moocs" class="section level5">
+<h5><span class="header-section-number">14.3.1.2.1</span> MOOCs</h5>
 <p>There is a <a href="https://fr.coursera.org/specializations/r">Coursera specialization corresponding to the book by Roger Peng, Sean Kross and Brooke Anderson</a>, with a course specifically about R packages.</p>
 </div>
 </div>
 </div>
 <div id="reading-about-our-guidelines" class="section level3">
-<h3><span class="header-section-number">14.1.2</span> Reading about our guidelines</h3>
-<p>See the whole first section, starting with the <a href="building.html#building">chapter about building a package</a></p>
+<h3><span class="header-section-number">14.3.2</span> Reading about our guidelines</h3>
+<p>See the whole first section of this book: <a href="building.html#building">Building Your Package</a></p>
 </div>
-</div>
-<div id="reporting-issues-or-feature-requests" class="section level2">
-<h2><span class="header-section-number">14.2</span> Reporting issues or feature requests</h2>
-<p>If you already have a package in mind, head to its issue tracker for reporting a bug or a feature request you might have. E.g. if you have a feature request for <code>magick</code>, the place to fill it is <a href="https://github.com/ropensci/magick/issues" class="uri">https://github.com/ropensci/magick/issues</a></p>
-</div>
-<div id="reporting-use-cases" class="section level2">
-<h2><span class="header-section-number">14.3</span> Reporting use cases</h2>
-<p>If you are the author, or the reader, of a use case of one of our packages, please send the link to Scott Chamberlain (<a href="mailto:scott@ropensci.org">scott@ropensci.org</a>) for inclusion in the <a href="https://news.ropensci.org/">rOpenSci biweekly newsletter</a>. If the package you used has a “use cases in the wild” section in its README you can make a Pull Request to the GitHub repository for that package to suggest adding your use case.</p>
 </div>
 <div id="finding-where-to-contribute-code-or-documentation" class="section level2">
 <h2><span class="header-section-number">14.4</span> Finding where to contribute code or documentation</h2>
 <p>Most our packages are developed on GitHub. We have two organizations:</p>
 <ul>
-<li><p><a href="https://github.com/ropensci" class="uri">https://github.com/ropensci</a> for more mature packages,</p></li>
+<li><p><a href="https://github.com/ropensci" class="uri">https://github.com/ropensci</a> for more mature packages, , including some developed by rOpenSci staff and some developed by community members where the package has gone through <a href="onboardingintro.html#onboardingintro">review and onboarding</a></p></li>
 <li><p><a href="https://github.com/ropenscilabs" class="uri">https://github.com/ropenscilabs</a> for experiments and packages that are not ready for release yet.</p></li>
 </ul>
-<p>If you already use one of our packages, you can have a look at its issue tracker and comment in one of the issues to ask the maintainer whether they’d be interested in your help. E.g. if you like <code>taxize</code>, the place to look is <a href="https://github.com/ropensci/taxize/issues" class="uri">https://github.com/ropensci/taxize/issues</a></p>
-<p>If you’re not a passionate user of one of our packages yet, you can find one to contribute to by browsing <a href="https://ropensci.org/packages/">our packages page</a>. In particular, you could browse issues targeted at beginner by using <a href="https://github.com/search?q=user%3Aropensci+user%3Aropenscilabs+label%3ABeginner+state%3Aopen&amp;type=Issues">the <code>contributr</code> Shiny app by Lucy D’Agostino McGowan</a>
-or by an advanced GitHub search such as <a href="https://github.com/search?q=user%3Aropensci+user%3Aropenscilabs+label%3ABeginner+state%3Aopen&amp;type=Issues">this one</a>.</p>
+<p>If you already know what package you’d like to contribute to, have a look at its issue tracker and comment in one of the issues to ask the maintainer whether they’d be interested in your help. E.g. if you like <code>taxize</code>, the place to look is <a href="https://github.com/ropensci/taxize/issues" class="uri">https://github.com/ropensci/taxize/issues</a></p>
+<p>If you’re not sure which package you’d like to contribute to, you can start by browsing <a href="https://ropensci.org/packages/">our packages page</a>. To browse issues targeted at beginners you could try <a href="https://ropensci.shinyapps.io/contributr/">the <code>contributr</code> Shiny app by Lucy D’Agostino McGowan</a> or use an advanced GitHub search such as <a href="https://github.com/search?q=user%3Aropensci+user%3Aropenscilabs+label%3ABeginner+state%3Aopen&amp;type=Issues">this one</a> that gets all issues from “ropensci” or “ropenscilabs” organizations that are open and labelled “beginner”.</p>
+<p>Still not sure how you can contribute? Tell us about your expertise and interests and we’ll try to match you with a package that could use your help.</p>
 
 </div>
 </div>
