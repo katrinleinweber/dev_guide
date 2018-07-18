@@ -3,8 +3,9 @@
 # Packaging Guide {#building}
 
 <div class="summaryblock">
-<p>rOpenSci accepts packages that meet our guidelines via a streamlined <a href="https://github.com/ropensci/onboarding">onboarding process</a>. To ensure a consistent style across all of our tools we have written this chapter highlighting our guidelines for package development. Please also read and apply our <a href="#ci">chapter about continuous integration (CI)</a>. Further guidance for after onboarding is provided in the third section of this book starting with <a href="#collaboration">a chapter about collaboration</a>.</p>
-<p>We strongly recommend that package developers read Hadley Wickham’s concise but thorough book on package development which is available for <a href="http://r-pkgs.had.co.nz/">free online</a> (and <a href="http://amzn.com/1491910593?tag=r-pkgs-20">print</a>).</p>
+<p>rOpenSci accepts packages that meet our guidelines via a streamlined <a href="#whatisonboarding">onboarding process</a>. To ensure a consistent style across all of our tools we have written this chapter highlighting our guidelines for package development. Please also read and apply our <a href="#ci">chapter about continuous integration (CI)</a>. Further guidance for after onboarding is provided in the third section of this book starting with <a href="#collaboration">a chapter about collaboration</a>.</p>
+<p>We strongly recommend that package developers read Hadley Wickham’s concise but thorough book on package development which is available for <a href="http://r-pkgs.had.co.nz/">free online</a> (and <a href="http://amzn.com/1491910593?tag=r-pkgs-20">print</a>). Our guide is partially redundant with other resources but highlights rOpenSci’s guidelines.</p>
+<p>To read why submitting a package to rOpenSci is worth the effort to meet guidelines, have a look at <a href="#whysubmit">reasons to submit</a>.</p>
 </div>
 
 ## Package name and metadata
