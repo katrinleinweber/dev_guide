@@ -6,18 +6,12 @@
 
 -   Consult our [policies](#policies) see if your package meets our criteria for fitting into our suite and is not overlapping with other packages.
     -    If you are unsure whether a package meets our criteria, feel free to open an issue as a pre-submission inquiry to ask if the package is appropriate.
--   Read and follow [our packaging style guide](#building) to ensure your package
-  meets our style and quality criteria.
+-   Read and follow [our packaging style guide](#building) and [reviewer's guide](#preparereview) to ensure your package meets our style and quality criteria.
     -   If you would like your package to also be submitted to
         [Journal of Open-Source Software](http://joss.theoj.org/) (JOSS), it should include a `paper.md` file describing the package. More detail on JOSS's requirements can be found [at their website](http://joss.theoj.org/about#author_guidelines).
     -   If you choose this option you should *not* submit your package to JOSS separately. It will be evaluated by JOSS based on the rOpenSci review.
--   We strongly suggest submitting your package for review _before_ publishing
-    on CRAN or submitting a software paper describing the package to a journal.
-    Review feedback may result in major improvements and updates to your package,
-    including renaming and breaking changes to functions.
--   Do not submit your package for review while it or an associated manuscript
-    is also under review at another venue, as this may result on conflicting
-    requests for changes.
+-   We strongly suggest submitting your package for review _before_ publishing on CRAN or submitting a software paper describing the package to a journal. Review feedback may result in major improvements and updates to your package, including renaming and breaking changes to functions.
+-   Do not submit your package for review while it or an associated manuscript is also under review at another venue, as this may result on conflicting requests for changes.
 -   Next, [open a new issue](https://github.com/ropensci/onboarding/issues/new) in
 the onboarding repository and fill out the template.
 -   Communication between authors, reviewers and editors will first and foremost take place on GitHub, although you can choose to contact the editor by email or Slack for certain issues. *When submitting a package please make sure your GitHub notification settings make it unlikely you will miss a comment.*
