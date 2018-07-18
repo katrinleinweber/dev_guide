@@ -325,6 +325,7 @@ Along with <a href="building.html#building">last chapter</a>, it forms our guide
 <h3><span class="header-section-number">2.3.1</span> Travis CI (Linux and Mac OSX)</h3>
 <p>Travis offers continuous integration for Linux and Mac OSX. Set it up using <code>usethis::use_travis()</code>.</p>
 <p>R is now a <a href="http://blog.travis-ci.com/2015-02-26-test-your-r-applications-on-travis-ci/">natively supported language on Travis-CI</a>, making it easier than ever to do continuous integration. See <a href="http://marker.to/NEr8Bd">R Packages</a> and Julia Silge’s <a href="http://juliasilge.com/blog/Beginners-Guide-to-Travis/">Beginner’s Guide to Travis-CI for R</a> for more help.</p>
+<p>To customize your build, have a look at <a href="https://docs.travis-ci.com/user/languages/r/">Travis’ docs</a> and at existing Travis config files over rOpenSci’s ropensci GitHub organization, e.g. <a href="https://github.com/ropensci/spelling/blob/master/.travis.yml">this one for the <code>spelling</code> package</a>.</p>
 <p>Please use these tips to minimize build time on Travis especially after your package project gets transferred to ropensci Travis account:</p>
 <ul>
 <li><p>Cache installation of packages. Add <code>cache: packages</code> at the beginning of the config file. <a href="https://github.com/ropensci/crul/blob/ee31c0128fd3279165360ef5ee2a1775ab00c82f/.travis.yml#L3">Example in the wild</a>. It’ll already be in the config file if you set Travis up using <code>usethis::use_travis()</code>.</p></li>
