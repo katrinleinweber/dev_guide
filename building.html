@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>rOpenSci Packages: Development, Maintenance, and Peer Review</title>
   <meta name="description" content="Extended version of the onboarding packaging guide.">
-  <meta name="generator" content="bookdown 0.7.14 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="rOpenSci Packages: Development, Maintenance, and Peer Review" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="rOpenSci onboarding editorial team: Scott Chamberlain, Anna Krystalli, Lincoln Mullen, Karthik Ram, Noam Ross, Maëlle Salmon">
 
 
-<meta name="date" content="2018-07-19">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -385,7 +385,7 @@ can be found at <em>link</em>”.</p></li>
 <li><p>We recommend using the <code>@family</code> tag in the documentation of functions to allow their grouping in the documentation of the installed package and potentially in the package’s website, see <a href="http://r-pkgs.had.co.nz/man.html">this section of Hadley Wickham’s book</a> and <a href="building.html#function-grouping">this section of the present chapter</a> for more details.</p></li>
 <li><p>The package should contain top-level documentation for <code>?foobar</code>, (or <code>?foobar-package</code> if there is a naming conflict). Optionally, you can use both <code>?foobar</code> and <code>?foobar-package</code> for the package level manual file, using <code>@aliases</code> roxygen tag. <code>usethis::use_package_doc()</code> adds the template for the top-level documentation.</p></li>
 <li><p>The package should contain at least one vignette providing a substantial coverage of package functions, illustrating realistic use cases and how functions are intended to interact. If the package is small, the vignette and the README can have the same content.</p></li>
-<li><p>As is the case for a README, top-level documentation or vignettes may be the first point of entry for users. If your package connects to a data source or online service, or wraps other software, it should provide enough information for users to understand the nature of the data, service, or software, and provide links to other relevant data and documentation. For instance, a the vignette intro or documentation should not merely read, “Provides access to GooberDB,” but also include, “…, an online repository of Goober sightings in South America. More information about GooberDB, and documentation of database structure and metadata can be found at <em>link</em>”. Any vignette should outline prerequisite knowledge to be able to understand vignette upfront.</p></li>
+<li><p>As is the case for a README, top-level documentation or vignettes may be the first point of entry for users. If your package connects to a data source or online service, or wraps other software, it should provide enough information for users to understand the nature of the data, service, or software, and provide links to other relevant data and documentation. For instance, a vignette intro or documentation should not merely read, “Provides access to GooberDB,” but also include, “…, an online repository of Goober sightings in South America. More information about GooberDB, and documentation of database structure and metadata can be found at <em>link</em>”. Any vignette should outline prerequisite knowledge to be able to understand the vignette upfront.</p></li>
 </ul>
 <p>The general vignette should present a series of examples progressing in complexity from basic to advanced usage.</p>
 <ul>
