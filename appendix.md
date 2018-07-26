@@ -3,6 +3,7 @@
 # Review template {#reviewtemplate}
 
 ```
+
 ## Package Review
 
 *Please check off boxes as applicable, and elaborate in comments below.  Your review is not limited to these topics, as described in the reviewer guide*
@@ -44,18 +45,19 @@ The package includes all the following forms of documentation:
 
 - [ ] **The author has responded to my review and made changes to my satisfaction. I recommend approving this package.**
 
-Estimated hours spent reviewing: 
+Estimated hours spent reviewing:
 
 ---
 
 ### Review Comments
-
-
 ```
+
+
 
 # Editor's template {#editortemplate}
 
 ```
+
 ### Editor checks:
 
 - [ ] **Fit**: The package meets criteria for [fit](policies.md#fit) and [overlap](policies.md#fit)
@@ -73,28 +75,29 @@ Estimated hours spent reviewing:
 
 Reviewers:
 Due date:
-```
 
+```
 
 # Review request template {#reviewrequesttemplate}
 
 Editors may make use of the e-mail template below in recruiting reviewers.
 
 ```
+
 Dear [REVIEWER]
 
 Hi, this is [EDITOR]. [FRIENDLY BANTER]. I'm writing to ask if you would be willing to review a package for rOpenSci. As you probably know, rOpenSci conducts peer review of R packages contributed to our collection in a manner similar to journals.
 
 The package, [PACKAGE] by [AUTHOR(S)], does [FUNCTION]. You can find it on GitHub here: [REPO LINK]. We conduct our open review process via GitHub as well, here: [ONBOARDING ISSUE]
 
-If you accept, note that we ask reviewers to complete reviews in three weeks. (We’ve found it takes a similar amount of time to review a package as an academic paper.) 
+If you accept, note that we ask reviewers to complete reviews in three weeks. (We’ve found it takes a similar amount of time to review a package as an academic paper.)
 
 Our [reviewers guide] details what we look for in a package review, and includes links to example reviews. Our standards are detailed in our [packaging guide], and we provide reviewer [template] for you to use. If you have questions or feedback, feel free to ask me or post to the [rOpenSci forum].
 
 {IF APPLICABLE: The authors have also chosen to jointly submit their package to the Journal of Open Source Software, so this package includes a short `paper.md` manuscript describing the software that we ask you include in your review.}
 
 Are you able to review? If you can not, suggestions for alternate reviewers are always helpful. If I don't hear from you within a week, I will assume you are unable to
-review at this time. 
+review at this time.
 
 Thank you for your time.
 
@@ -106,12 +109,11 @@ Sincerely,
 [packaging guide]: https://ropensci.github.io/dev_guide/https://ropensci.github.io/dev_guide/building.html
 [template]: https://ropensci.github.io/dev_guide/reviewtemplate.html
 [rOpenSci forum]: https://discuss.ropensci.org/
-
 ```
-
 # Approval comment template {#approvaltemplate}
 
 ```
+
 Approved! Thanks <author(s) GitHub username(s)> for submitting and <reviewers' GithHub usernames> for your reviews! <optional: smiling cat emoji à la Scott>
 
 To-dos:
@@ -120,7 +122,7 @@ To-dos:
 "```
 [![ropensci_footer](https://ropensci.org/public_images/ropensci_footer.png)](https://ropensci.org)```"
 - [ ] Fix any links in badges for CI and coverage to point to the ropensci URL. We no longer transfer Appveyor projects to ropensci Appveyor account so after transfer of your repo to rOpenSci's "ropensci" GitHub organization the badge should be `[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/pkgname?branch=master&svg=true)](https://ci.appveyor.com/project/individualaccount/pkgname)`.
-- [ ] We're starting to roll out software metadata files to all ropensci packages via the Codemeta initiative, see https://github.com/ropensci/codemetar/#codemetar for how to include it in your package, after installing the package - should be easy as running codemetar::write_codemeta() in the root of your package. 
+- [ ] We're starting to roll out software metadata files to all ropensci packages via the Codemeta initiative, see https://github.com/ropensci/codemetar/#codemetar for how to include it in your package, after installing the package - should be easy as running codemetar::write_codemeta() in the root of your package.
 <IF JOSS>
 - [ ] Activate Zenodo watching the repo
 - [ ] Tag and create a release so as to create a Zenodo version and DOI
@@ -137,6 +139,7 @@ We've started putting together a gitbook with our best practice and tips, [this 
 # NEWS template {#newstemplate}
 
 ```
+
 foobar 0.2.0 (2016-04-01)
 =========================
 
@@ -162,9 +165,9 @@ foobar 0.2.0 (2016-04-01)
   * Clarified the role of `hello_mars()` vs. `goodbye_mars()`
 
 
-### (a special: any heading grouping a large number of changes under one thing) 
+### (a special: any heading grouping a large number of changes under one thing)
 
-    * blablabla.  
+    * blablabla.
 
 foobar 0.1.0 (2016-01-01)
 =========================
