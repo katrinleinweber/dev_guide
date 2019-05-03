@@ -142,6 +142,10 @@ can be found at *link*".
 
 * The vignette(s) should include citations to software and papers where appropriate.
 
+* We request all submissions to use `roxygen2` for documentation.  `roxygen2` is [an R package](https://cran.r-project.org/package=roxygen2) that automatically compiles `.Rd` files to your `man` folder in your package from simple tags written above each function.
+
+* More information on using roxygen2 [documentation](http://r-pkgs.had.co.nz/man.html) is available in the R packages book.
+
 * The README, the top-level package docs, vignettes, websites, etc., should all have enough information at the beginning to get a high-level overview of the package and the services/data it connects to, and provide navigation to other relevant pieces of documentation. This is to follow the principle of *multiple points of entry* i.e. to take into account the fact that any piece of documentation may be the first encounter the user has with the package and/or the tool/data it wraps.
 
 * Add `#' @noRd` to internal functions.
@@ -189,7 +193,7 @@ The `DESCRIPTION` file of a package should list package authors and contributors
     comment = "Bea reviewed the package for ropensci, see <https://github.com/ropensci/software-review/issues/116>"),
 ```
 
-Only include reviewers after asking for their consent. Read more in [this blog post "Thanking Your Reviewers: Gratitude through Semantic Metadata"](https://ropensci.org/blog/2018/03/16/thanking-reviewers-in-metadata/).  Note that 'rev' will raise a CRAN NOTE unless the package is built using R v3.5. As of June 2018 you need to use [`roxygen2` dev version](https://github.com/klutometis/roxygen#installation) for the list of authors in the package-level documentation to be compiled properly with the "rev" role (because this is a MARC role not included yet in [`royxgen2` CRAN version from February 2017](https://cran.r-project.org/web/packages/roxygen2/index.html)).
+Only include reviewers after asking for their consent. Read more in [this blog post "Thanking Your Reviewers: Gratitude through Semantic Metadata"](https://ropensci.org/blog/2018/03/16/thanking-reviewers-in-metadata/).  Note that 'rev' will raise a CRAN NOTE unless the package is built using R v3.5. As of June 2018 you need to use [`roxygen2` dev version](https://github.com/klutometis/roxygen#installation) for the list of authors in the package-level documentation to be compiled properly with the "rev" role (because this is a MARC role not included yet in [`royxgen2` CRAN version from February 2017](https://cran.r-project.org/package=roxygen2)).
 
 Please do not list editors as contributors. Your participation in and contribution to rOpenSci is thanks enough!
 

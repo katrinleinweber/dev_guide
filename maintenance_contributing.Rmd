@@ -57,7 +57,7 @@ Before contributing to one of our packages, you might want to read a bit more ab
 
 * [Hadley Wickham's *R packages* book](http://r-pkgs.had.co.nz/)
 
-* [*Writing R extensions*, the official CRAN guide](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)
+* [*Writing R extensions*, the official CRAN guide](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
 
 * [*Mastering Software Development in R* by Roger D. Peng, Sean Kross, and Brooke Anderson](https://bookdown.org/rdpeng/RProgDA/)
 
